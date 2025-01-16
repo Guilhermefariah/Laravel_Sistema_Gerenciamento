@@ -19,7 +19,11 @@ class SellerSeeder extends Seeder
                 'email' => 'joao@gmail.com',
                 'phone' => '11999999999',
                 'status' => 'Ativo',
-                'amount_tickets' => 10
+                'amount_tickets' => json_encode([
+                    'em_aberto' => 5,
+                    'em_andamento' => 2,
+                    'resolvido' => 10
+                ]),
             ]);
 
             Seller::create([
@@ -27,7 +31,11 @@ class SellerSeeder extends Seeder
                 'email' => 'maria@gmail.com',
                 'phone' => '11999999999',
                 'status' => 'Ativo',
-                'amount_tickets' => 9
+                'amount_tickets' => json_encode([
+                    'em_aberto' => 5,
+                    'em_andamento' => 2,
+                    'resolvido' => 10
+                ]),
             ]);
 
             Seller::create([
@@ -35,7 +43,11 @@ class SellerSeeder extends Seeder
                 'email' => 'pedro@gmail.com',
                 'phone' => '11999999999',
                 'status' => 'Ativo',
-                'amount_tickets' => 8
+                'amount_tickets' => json_encode([
+                    'em_aberto' => 4,
+                    'em_andamento' => 3,
+                    'resolvido' => 7
+                ]),
             ]);
 
             Seller::create([
@@ -43,7 +55,11 @@ class SellerSeeder extends Seeder
                 'email' => 'ana@gmail.com',
                 'phone' => '11999999999',
                 'status' => 'Ativo',
-                'amount_tickets' => 7
+                'amount_tickets' => json_encode([
+                    'em_aberto' => 6,
+                    'em_andamento' => 4,
+                    'resolvido' => 9
+                ]),
             ]);
 
             Seller::create([
@@ -51,7 +67,11 @@ class SellerSeeder extends Seeder
                 'email' => 'lucas@gmail.com',
                 'phone' => '11999999999',
                 'status' => 'Ativo',
-                'amount_tickets' => 6
+                'amount_tickets' => json_encode([
+                    'em_aberto' => 6,
+                    'em_andamento' => 7,
+                    'resolvido' => 8
+                ]),
             ]);
         }
     }
