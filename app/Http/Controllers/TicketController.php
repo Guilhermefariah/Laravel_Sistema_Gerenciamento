@@ -12,7 +12,7 @@ class TicketController extends Controller
 {
     public function index(): Response 
     {
-        $tickets = Ticket::orderByDesc('id')->paginate(10);
+        $tickets = Ticket::orderByDesc('id')->paginate(4);
 
         return Inertia::render('Tickets/TicketIndex', ['tickets' => $tickets]);
     }

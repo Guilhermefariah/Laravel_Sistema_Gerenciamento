@@ -8,7 +8,7 @@ export default function WarningButton({
         <button
             {...props}
             className={
-                `inline-flex items-center px-4 py-2 bg-none border border-transparent rounded-md font-semibold text-xs text-blue-600 hover:text-white uppercase tracking-widest hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 transition ease-in-out duration-150 ${
+                `inline-flex items-center px-4 py-2 bg-none border border-transparent rounded-md font-semibold text-xs text-blue-600 hover:text-white uppercase tracking-widest hover:bg-blue-700 transition ease-in-out duration-150 ${
                     disabled && "opacity-25"
                 } ` + className
             }

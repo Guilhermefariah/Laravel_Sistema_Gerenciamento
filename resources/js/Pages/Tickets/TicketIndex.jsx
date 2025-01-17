@@ -6,6 +6,7 @@ import { AlertMessage } from "@/Components/Delete/AlertMessage/AlertMessage";
 import { ConfirmDelete } from "@/Components/Delete/ConfirmDelete";
 import { Pagination } from "@/Components/Pagination/Pagination";
 import { Head, Link, usePage } from "@inertiajs/react";
+import TableHeadTicket from "@/Components/Table/TableTicket/TableHeadTicket";
 
 export default function TicketIndex({ tickets }) {
     const { flash } = usePage().props;
@@ -32,29 +33,9 @@ export default function TicketIndex({ tickets }) {
                     <AlertMessage message={flash} />
 
                     <table className="min-w-full divide-y divide-gray-200 dark:divide-gray-700">
-                        <thead className="bg-gray-50 dark:bg-gray-700">
-                            <tr>
-                                <th className="px-6 py-3 text-left text-sm font-medium text-gray-200 tracking-wider">
-                                    ID
-                                </th>
-                                <th className="px-6 py-3 text-left text-sm font-medium text-gray-200 tracking-wider">
-                                    Assunto
-                                </th>
-                                <th className="px-6 py-3 text-left text-sm font-medium text-gray-200 tracking-wider">
-                                    Descrição
-                                </th>
-                                <th className="px-6 py-3 text-left text-sm font-medium text-gray-200 tracking-wider">
-                                    Data de crianção
-                                </th>
-                                <th className="px-6 py-3 text-left text-sm font-medium text-gray-200 tracking-wider">
-                                    Status
-                                </th>
-                                <th className="px-6 py-3 text-center text-sm font-medium text-gray-200 tracking-wider">
-                                    Ações
-                                </th>
-                            </tr>
-                        </thead>
 
+                        <TableHeadTicket />
+                        
                         <tbody className="bg-white divide-y divide-gray-200 dark:bg-gray-800 dark:divide-gray-700">
                             {tickets.data.map((ticket) => (
                                 <tr key={ticket.id}>
