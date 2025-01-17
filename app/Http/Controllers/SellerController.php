@@ -67,7 +67,7 @@ class SellerController extends Controller
     {
         $request->validate([
             'name' => 'required|string|max:255',
-            'email' => 'required|string|email|max:255|unique:Sellers',
+            'email' => "required|string|email|max:255|unique:Sellers,email,{$seller->id}",
             'phone' => 'required|string|max:255',
             'amount_tickets' => 'required',
             'status' => 'required',
@@ -80,9 +80,6 @@ class SellerController extends Controller
             'email.unique' => 'O email já está em uso',
             'phone.required' => 'O telefone é obrigatório',
             'phone.max' => 'O telefone deve ter menos de 255 caracteres',
-            'amount_tickets.required' => 'O número de ingressos é obrigatório',
-            'amount_tickets.integer' => 'O número de ingressos deve ser um número inteiro',
-            'amount_tickets.max' => 'O número de ingressos deve ter menos de 255 caracteres',
         ]);
 
         $seller->update([

@@ -9,5 +9,17 @@ class Ticket extends Model
 {
     use HasFactory;
 
-    protected $guarded = [];
+    protected $table = 'tickets';
+
+    protected $fillable = [
+        'subject',
+        'description',
+        'date_creation',
+        'status',
+    ];
+
+    public function selSeller()
+    {
+        return $this->belongsTo(Seller::class);
+    }
 }

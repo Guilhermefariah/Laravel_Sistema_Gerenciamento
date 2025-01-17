@@ -2,13 +2,11 @@
 
 namespace App\Models;
 
-use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
 class Seller extends Model
 {
-    use HasFactory;
-
+    protected $table = 'sellers';
     protected $fillable = [
         'name',
         'email',
@@ -16,4 +14,9 @@ class Seller extends Model
         'address',
         'phone',
     ];
+
+    public function sellTickets()
+    {
+        return $this->hasMany(Ticket::class);
+    }
 }

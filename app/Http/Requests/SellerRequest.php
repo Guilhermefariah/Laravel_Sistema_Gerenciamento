@@ -11,7 +11,7 @@ class SellerRequest extends FormRequest
      */
     public function authorize(): bool
     {
-        return false;
+        return true;
     }
 
     /**
@@ -22,14 +22,11 @@ class SellerRequest extends FormRequest
     public function rules(): array
     {
         return [
-            'name' => ['required', 'string', 'max:255'],
-            'email' => ['required', 'string', 'email', 'max:255'],
-            'phone' => ['required', 'string', 'max:255'],
-            'amount_tickets' => ['required', 'array'],
-            'amount_tickets.em_aberto' => ['required', 'integer', 'min:0'],
-            'amount_tickets.em_andamento' => ['required', 'integer', 'min:0'],
-            'amount_tickets.resolvido' => ['required', 'integer', 'min:0'],
-            'status' => ['required'],
+            'name' => 'required',
+            'email' => 'required|email',
+            'phone' => 'required',
+            'amount_tickets' => 'required',
+            'status' => 'required',
         ];
     }    
 }

@@ -1,12 +1,12 @@
 import AuthenticatedLayout from "@/Layouts/AuthenticatedLayout";
 import InfoButton from "@/Components/Button/InfoButton";
-import PrimaryButton from "@/Components/Button/ViewButton";
 import { Head, Link, useForm } from "@inertiajs/react";
 import UpdateButton from "@/Components/Button/UpdateButton";
 import ViewButton from "@/Components/Button/ViewButton";
 
 export default function SellerEdit({ seller }) {
     const { data, setData, put, processing, errors } = useForm({
+        id: seller.id || "",
         name: seller.name || "",
         email: seller.email || "",
         phone: seller.phone || "",
@@ -17,7 +17,7 @@ export default function SellerEdit({ seller }) {
     const handleSubmit = (e) => {
         e.preventDefault();
 
-        put(route("sellers.update", { seller: seller.id }));
+        put(route("sellers.update", { seller: data.id }));
     };
 
     return (
@@ -150,16 +150,21 @@ export default function SellerEdit({ seller }) {
                             >
                                 Quantidade de tickets
                             </label>
-                            <input
-                                id="amount_tickets"
-                                type="number"
-                                placeholder="Amount Tickets"
-                                value={data.amount_tickets}
+                            <select
+                                id="status"
+                                value={data.status}
                                 onChange={(e) =>
-                                    setData("amount_tickets", e.target.value)
+                                    setData("status", e.target.value)
                                 }
                                 className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500 sm:text-sm dark:bg-gray-700 dark:border-gray-600 dark:text-gray-300"
-                            />
+                            >
+                                <option value="">Quantidade de tickets</option>
+                                <option value="Em aberto">Em aberto</option>
+                                <option value="Em andamento">
+                                    Em andamento
+                                </option>
+                                <option value="Resolvido">Resolvido</option>
+                            </select>
                             {errors.amount_tickets && (
                                 <span className="text-red-500">
                                     {errors.amount_tickets}
