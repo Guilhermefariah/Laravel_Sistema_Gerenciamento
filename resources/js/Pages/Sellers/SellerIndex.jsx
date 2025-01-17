@@ -69,7 +69,7 @@ export default function SellerIndex({ sellers }) {
                                         </Link>
                                         <ConfirmDelete
                                             routeName="sellers.destroy"
-                                            resourceId={seller.id}
+                                            id={seller.id}
                                         />
                                     </td>
                                 </tr>

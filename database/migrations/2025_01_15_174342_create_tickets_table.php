@@ -15,8 +15,10 @@ return new class extends Migration
             $table->id();
             $table->string('subject');
             $table->string('description');
-            $table->string('date_creation');
-            $table->string('status');
+            $table->dateTime('date_creation');
+            $table->dateTime('date_resolution')->nullable();
+            $table->enum('status', ['Open', 'In Progress', 'Delayed', 'Resolved'])->default('Open');
+            $table->foreignId('seller_id')->constrained()->onDelete('cascade');
             $table->timestamps();
         });
     }

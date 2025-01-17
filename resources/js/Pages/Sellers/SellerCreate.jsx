@@ -107,30 +107,6 @@ export default function SellerCreate() {
 
                         <div>
                             <label
-                                htmlFor="amount_tickets"
-                                className="block text-sm font-medium text-gray-700 dark:text-gray-200"
-                            >
-                                Quantidade de Tickets
-                            </label>
-                            <input
-                                id="amount_tickets"
-                                type="number"
-                                placeholder="Quantidade de tickets"
-                                value={data.amount_tickets}
-                                onChange={(e) =>
-                                    setData("amount_tickets", e.target.value)
-                                }
-                                className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500 sm:text-sm dark:bg-gray-700 dark:border-gray-600 dark:text-gray-300"
-                            />
-                            {errors.amount_tickets && (
-                                <span className="text-red-500 text-sm">
-                                    {errors.amount_tickets}
-                                </span>
-                            )}
-                        </div>
-
-                        <div>
-                            <label
                                 htmlFor="status"
                                 className="block text-sm font-medium text-gray-700 dark:text-gray-200"
                             >
@@ -138,19 +114,52 @@ export default function SellerCreate() {
                             </label>
                             <select
                                 id="status"
+                                name="status"
+                                type="text"
                                 value={data.status}
                                 onChange={(e) =>
                                     setData("status", e.target.value)
                                 }
                                 className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500 sm:text-sm dark:bg-gray-700 dark:border-gray-600 dark:text-gray-300"
                             >
-                                <option value="">Selecione</option>
-                                <option value="Ativo">Ativo</option>
-                                <option value="Inativo">Inativo</option>
+                                <option value="" disabled>Selecione</option>
+                                <option value="active">Ativo</option>
+                                <option value="inactive">Inativo</option>
                             </select>
                             {errors.status && (
                                 <span className="text-red-500 text-sm">
                                     {errors.status}
+                                </span>
+                            )}
+                        </div>
+
+                        <div>
+                            <label
+                                htmlFor="amount_tickets"
+                                className="block text-sm font-medium text-gray-700 dark:text-gray-200"
+                            >
+                                Quantidade de Tickets
+                            </label>
+                            <select
+                                id="amount_tickets"
+                                name="amount_tickets"
+                                type="text"
+                                placeholder="Quantidade de tickets"
+                                value={data.amount_tickets}
+                                onChange={(e) =>
+                                    setData("amount_tickets", e.target.value)
+                                }
+                                className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500 sm:text-sm dark:bg-gray-700 dark:border-gray-600 dark:text-gray-300"
+                            >
+                                <option value="" disabled>Quantidade de tickets</option>
+                                <option value="in_open">Em aberto</option>
+                                <option value="in_progress">Em andamento</option>
+                                <option value="resolved">Resolvido</option>
+                            </select>
+
+                            {errors.amount_tickets && (
+                                <span className="text-red-500 text-sm">
+                                    {errors.amount_tickets}
                                 </span>
                             )}
                         </div>

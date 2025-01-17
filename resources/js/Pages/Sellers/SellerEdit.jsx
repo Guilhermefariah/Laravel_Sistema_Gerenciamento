@@ -151,10 +151,10 @@ export default function SellerEdit({ seller }) {
                                 Quantidade de tickets
                             </label>
                             <select
-                                id="status"
-                                value={data.status}
+                                id="amount_tickets"
+                                value={data.amount_tickets}
                                 onChange={(e) =>
-                                    setData("status", e.target.value)
+                                    setData("amount_tickets", e.target.value)
                                 }
                                 className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500 sm:text-sm dark:bg-gray-700 dark:border-gray-600 dark:text-gray-300"
                             >
