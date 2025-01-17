@@ -10,81 +10,78 @@ export default function Authenticated({ header, children }) {
         useState(false);
 
     return (
-        <div className="min-h-screen bg-gray-100 dark:bg-gray-900">
-            <nav className="bg-white dark:bg-gray-800 border-b border-gray-100 dark:border-gray-700">
+        <div className="min-h-screen bg-gradient-to-b from-gray-100 to-gray-300 dark:from-gray-900 dark:to-gray-800">
+            <nav className="bg-white dark:bg-gray-800 shadow-lg">
                 <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                     <div className="flex justify-between h-16">
-                        <div className="flex">
-                            <div className="shrink-0 flex items-center">
-                                <Link href="/sellers">
-                                    <ApplicationLogo className="block h-9 w-auto fill-current text-gray-200 dark:text-red-600" />
-                                </Link>
-                            </div>
+                        <div className="flex items-center">
+                            <Link href="/sellers">
+                                <ApplicationLogo className="block h-9 w-auto fill-current text-red-500 hover:text-red-700 transition duration-300" />
+                            </Link>
 
-                            <div className="hidden space-x-8 sm:-my-px sm:ms-10 sm:flex">
+                            <div className="hidden space-x-8 sm:ms-10 sm:flex">
                                 <NavLink
                                     href={route("sellers.index")}
                                     active={route().current("sellers.index")}
                                 >
-                                    <h1 className="text-lg hover:text-red-600">Vendedores</h1>
+                                    <h1 className="text-lg text-gray-800 dark:text-gray-400 hover:text-red-500 transition duration-300">
+                                        Vendedores
+                                    </h1>
                                 </NavLink>
                                 <NavLink
                                     href={route("tickets.index")}
                                     active={route().current("tickets.index")}
                                 >
-                                    <h1 className="text-lg hover:text-red-600">Tickets</h1>
+                                    <h1 className="text-lg text-gray-800 dark:text-gray-400 hover:text-red-500 transition duration-300">
+                                        Tickets
+                                    </h1>
                                 </NavLink>
                             </div>
                         </div>
 
                         <div className="hidden sm:flex sm:items-center sm:ms-6">
-                            <div className="ms-3 relative">
-                                <Dropdown>
-                                    <Dropdown.Trigger>
-                                        <span className="inline-flex rounded-md">
-                                            <button
-                                                type="button"
-                                                className="inline-flex items-center px-3 py-2 border border-transparent text-sm leading-4 font-medium rounded-md text-gray-500 dark:text-gray-400 bg-white dark:bg-gray-800 hover:text-gray-700 dark:hover:text-gray-300 focus:outline-none transition ease-in-out duration-150"
-                                            >
-                                                <svg
-                                                    xmlns="http://www.w3.org/2000/svg"
-                                                    fill="none"
-                                                    viewBox="0 0 24 24"
-                                                    stroke-width="1.5"
-                                                    stroke="currentColor"
-                                                    class="size-6"
-                                                >
-                                                    <path
-                                                        stroke-linecap="round"
-                                                        stroke-linejoin="round"
-                                                        d="M8.25 9V5.25A2.25 2.25 0 0 1 10.5 3h6a2.25 2.25 0 0 1 2.25 2.25v13.5A2.25 2.25 0 0 1 16.5 21h-6a2.25 2.25 0 0 1-2.25-2.25V15m-3 0-3-3m0 0 3-3m-3 3H15"
-                                                    />
-                                                </svg>
-                                            </button>
-                                        </span>
-                                    </Dropdown.Trigger>
-
-                                    <Dropdown.Content>
-                                        <Dropdown.Link
-                                            href={route("sellers.index")}
-                                            method="post"
-                                            as="button"
+                            <Dropdown>
+                                <Dropdown.Trigger>
+                                    <button
+                                        type="button"
+                                        className="inline-flex items-center px-4 py-2 bg-gray-200 dark:bg-gray-700 text-gray-600 dark:text-gray-300 font-semibold rounded-lg shadow-lg hover:bg-gray-300 dark:hover:bg-gray-600 transition duration-300"
+                                    >
+                                        <svg
+                                            xmlns="http://www.w3.org/2000/svg"
+                                            fill="none"
+                                            viewBox="0 0 24 24"
+                                            strokeWidth="1.5"
+                                            stroke="currentColor"
+                                            className="h-5 w-5"
                                         >
-                                            Sair
-                                        </Dropdown.Link>
-                                    </Dropdown.Content>
-                                </Dropdown>
-                            </div>
+                                            <path
+                                                strokeLinecap="round"
+                                                strokeLinejoin="round"
+                                                d="M8.25 9V5.25A2.25 2.25 0 0 1 10.5 3h6a2.25 2.25 0 0 1 2.25 2.25v13.5A2.25 2.25 0 0 1 16.5 21h-6a2.25 2.25 0 0 1-2.25-2.25V15m-3 0-3-3m0 0 3-3m-3 3H15"
+                                            />
+                                        </svg>
+                                    </button>
+                                </Dropdown.Trigger>
+                                <Dropdown.Content>
+                                    <Dropdown.Link
+                                        href={route("sellers.index")}
+                                        method="post"
+                                        as="button"
+                                    >
+                                        Sair
+                                    </Dropdown.Link>
+                                </Dropdown.Content>
+                            </Dropdown>
                         </div>
 
                         <div className="-mr-2 flex items-center sm:hidden">
                             <button
                                 onClick={() =>
                                     setShowingNavigationDropdown(
-                                        (previousState) => !previousState
+                                        !showingNavigationDropdown
                                     )
                                 }
-                                className="inline-flex items-center justify-center p-2 rounded-md text-gray-400 dark:text-gray-500 hover:text-gray-500 dark:hover:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-900 focus:outline-none focus:bg-gray-100 dark:focus:bg-gray-900 focus:text-gray-500 dark:focus:text-gray-400 transition duration-150 ease-in-out"
+                                className="p-2 rounded-md text-gray-400 dark:text-gray-500 hover:text-gray-500 dark:hover:text-gray-400 hover:bg-gray-200 dark:hover:bg-gray-700 transition duration-150"
                             >
                                 <svg
                                     className="h-6 w-6"
@@ -92,28 +89,21 @@ export default function Authenticated({ header, children }) {
                                     fill="none"
                                     viewBox="0 0 24 24"
                                 >
-                                    <path
-                                        className={
-                                            !showingNavigationDropdown
-                                                ? "inline-flex"
-                                                : "hidden"
-                                        }
-                                        strokeLinecap="round"
-                                        strokeLinejoin="round"
-                                        strokeWidth="2"
-                                        d="M4 6h16M4 12h16M4 18h16"
-                                    />
-                                    <path
-                                        className={
-                                            showingNavigationDropdown
-                                                ? "inline-flex"
-                                                : "hidden"
-                                        }
-                                        strokeLinecap="round"
-                                        strokeLinejoin="round"
-                                        strokeWidth="2"
-                                        d="M6 18L18 6M6 6l12 12"
-                                    />
+                                    {showingNavigationDropdown ? (
+                                        <path
+                                            strokeLinecap="round"
+                                            strokeLinejoin="round"
+                                            strokeWidth="2"
+                                            d="M6 18L18 6M6 6l12 12"
+                                        />
+                                    ) : (
+                                        <path
+                                            strokeLinecap="round"
+                                            strokeLinejoin="round"
+                                            strokeWidth="2"
+                                            d="M4 6h16M4 12h16M4 18h16"
+                                        />
+                                    )}
                                 </svg>
                             </button>
                         </div>
@@ -121,7 +111,7 @@ export default function Authenticated({ header, children }) {
                 </div>
 
                 {showingNavigationDropdown && (
-                    <div className="sm:hidden">
+                    <div className="sm:hidden bg-gray-100 dark:bg-gray-900">
                         <div className="pt-2 pb-3 space-y-1">
                             <ResponsiveNavLink
                                 href={route("sellers.index")}
@@ -140,8 +130,8 @@ export default function Authenticated({ header, children }) {
                 )}
             </nav>
 
-            <header className="bg-white dark:bg-gray-800 shadow">
-                <div className="max-w-7xl mx-auto py-6 px-4 sm:px-6 lg:px-8">
+            <header className="bg-gradient-to-r from-red-400 to-red-600 dark:from-red-700 dark:to-red-900 shadow-xl">
+                <div className="max-w-7xl mx-auto py-6 px-4 sm:px-6 lg:px-8 text-white">
                     {header}
                 </div>
             </header>

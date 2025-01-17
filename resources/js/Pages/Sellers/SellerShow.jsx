@@ -9,19 +9,13 @@ export default function SellerShow({ seller }) {
     const { flash } = usePage().props;
 
     return (
-        <AuthenticatedLayout
-            header={
-                <h2 className="font-semibold text-xl text-gray-800 dark:text-gray-200 leading-tight">
-                    Vendedores
-                </h2>
-            }
-        >
+        <AuthenticatedLayout>
             <Head title={`Vendedores - ${seller.name}`} />
 
             <div className="py-4 max-w-7xl mx-auto sm:px-6 lg:px-8">
                 <div className="overflow-hidden bg-white shadow-lg sm:rounded-lg dark:bg-gray-800">
                     <div className="flex justify-between items-center m-4 text-white">
-                        <h3 className="text-lg">Detalhes do vendedor</h3>
+                        <h3 className="text-lg">Detalhes</h3>
                         <div className="flex space-x-1">
                             <Link href={route("sellers.index")}>
                                 <InfoButton className="text-sm" />

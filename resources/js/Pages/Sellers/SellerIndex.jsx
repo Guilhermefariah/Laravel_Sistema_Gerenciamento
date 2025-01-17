@@ -13,12 +13,12 @@ export default function SellerIndex({ sellers }) {
 
     return (
         <AuthenticatedLayout>
-            <Head title="sellers" />
+            <Head title="vendedores" />
 
             <div className="py-4 max-w-7xl mx-auto sm:px-6 lg:px-8">
                 <div className="overflow-hidden bg-white shadow-lg sm:rounded-lg dark:bg-gray-800">
                     <div className="flex justify-between items-center m-4 text-white">
-                        <h3 className="text-lg">Lista de Vendedores</h3>
+                        <h3 className="text-lg">Tabela de Vendedores</h3>
                         <div className="flex space-x-4">
                             <Link href={route("sellers.create")}>
                                 <SuccessButton className="text-sm" />
@@ -33,7 +33,7 @@ export default function SellerIndex({ sellers }) {
 
                         <tbody className="bg-white divide-y divide-gray-200 dark:bg-gray-800 dark:divide-gray-700">
                             {sellers.data.map((seller) => (
-                                <tr key={seller.id}>
+                                <tr key={seller.id} className="hover:bg-gray-100 dark:hover:bg-gray-700 transition duration-300">
                                     <td className="px-6 py-2 text-sm text-gray-200 tracking-wider">
                                         {seller.id}
                                     </td>
@@ -52,7 +52,7 @@ export default function SellerIndex({ sellers }) {
                                     <td className="px-6 py-2 text-sm text-gray-200 tracking-wider">
                                         {seller.status}
                                     </td>
-                                    <td className="px-6 py-2 text-sm text-gray-200 tracking-wider text-center">
+                                    <td className="px-6 py-2 text-sm text-center text-gray-200 tracking-wider">
                                         <Link
                                             href={route("sellers.show", {
                                                 id: seller.id,
@@ -65,7 +65,7 @@ export default function SellerIndex({ sellers }) {
                                                 id: seller.id,
                                             })}
                                         >
-                                            <WarningButton className="ms-1" />
+                                            <WarningButton className="mt-1" />
                                         </Link>
                                         <ConfirmDelete
                                             routeName="sellers.destroy"

@@ -4,7 +4,7 @@ import { Link } from "@inertiajs/react";
 
 export const Pagination = ({ links, currentPage }) => {
     return (
-        <div className="flex justify-center mt-6 mb-6 space-x-2">
+        <div className="flex justify-center mt-8 mb-8 space-x-4">
             {links
                 .filter((link, index) => {
                     const isPrevious = link.label === "&laquo; Previous";
@@ -22,54 +22,36 @@ export const Pagination = ({ links, currentPage }) => {
                 .map((link, index) => (
                     <motion.div
                         key={index}
-                        whileHover={{ scale: 1.1, rotate: 10 }}
-                        transition={{ type: "spring", stiffness: 200 }}
+                        whileHover={{ scale: 1.1, rotate: 2 }}
+                        whileTap={{ scale: 1.1 }}
+                        transition={{
+                            type: "spring",
+                            stiffness: 200,
+                            damping: 10,
+                        }}
+                        className={`${
+                            link.active
+                                ? "shadow-lg transform scale-105"
+                                : "shadow-md"
+                        }`}
                     >
                         <Link
                             href={link.url ? link.url : "#"}
                             as="button"
-                            className={`px-4 py-1 border rounded-md transition-colors duration-300 ${
+                            className={`px-6 py-1 text-lg font-medium border rounded-lg transition-colors duration-300 ${
                                 link.active
-                                    ? "bg-blue-800 text-white border-blue-600 cursor-default"
-                                    : "bg-white text-gray-800 border-blue-200 hover:bg-gray-100 hover:text-blue-600"
+                                    ? "bg-gradient-to-r from-gray-600 to-gray-600hover:text-red-800  text-white hover:text-red-800 cursor-default"
+                                    : "bg-gray-600 text-white border-gray-300 hover:bg-gradient-to-r hover:from-gray-600 hover:to-gray-900 hover:text-red-800"
                             } ${
                                 !link.url ? "cursor-not-allowed opacity-50" : ""
                             }`}
                             onClick={(e) => !link.url && e.preventDefault()}
                         >
-                            {link.label === "&laquo; Previous" ? (
-                                <svg
-                                    xmlns="http://www.w3.org/2000/svg"
-                                    fill="none"
-                                    viewBox="0 0 24 24"
-                                    stroke-width="1.5"
-                                    stroke="currentColor"
-                                    class="size-6"
-                                >
-                                    <path
-                                        stroke-linecap="round"
-                                        stroke-linejoin="round"
-                                        d="M21 16.811c0 .864-.933 1.406-1.683.977l-7.108-4.061a1.125 1.125 0 0 1 0-1.954l7.108-4.061A1.125 1.125 0 0 1 21 8.689v8.122ZM11.25 16.811c0 .864-.933 1.406-1.683.977l-7.108-4.061a1.125 1.125 0 0 1 0-1.954l7.108-4.061a1.125 1.125 0 0 1 1.683.977v8.122Z"
-                                    />
-                                </svg>
-                            ) : link.label === "Next &raquo;" ? (
-                                <svg
-                                    xmlns="http://www.w3.org/2000/svg"
-                                    fill="none"
-                                    viewBox="0 0 24 24"
-                                    stroke-width="1.5"
-                                    stroke="currentColor"
-                                    class="size-6"
-                                >
-                                    <path
-                                        stroke-linecap="round"
-                                        stroke-linejoin="round"
-                                        d="M3 8.689c0-.864.933-1.406 1.683-.977l7.108 4.061a1.125 1.125 0 0 1 0 1.954l-7.108 4.061A1.125 1.125 0 0 1 3 16.811V8.69ZM12.75 8.689c0-.864.933-1.406 1.683-.977l7.108 4.061a1.125 1.125 0 0 1 0 1.954l-7.108 4.061a1.125 1.125 0 0 1-1.683-.977V8.69Z"
-                                    />
-                                </svg>
-                            ) : (
-                                link.label
-                            )}
+                            {link.label === "&laquo; Previous"
+                                ? "←"
+                                : link.label === "Next &raquo;"
+                                ? "→"
+                                : link.label}
                         </Link>
                     </motion.div>
                 ))}
