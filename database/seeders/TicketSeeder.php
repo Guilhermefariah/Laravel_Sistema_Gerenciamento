@@ -48,7 +48,41 @@ class TicketSeeder extends Seeder
                 'date_creation' => now(),
                 'status' => 'Aberto'
             ]);
+
+            Ticket::create([
+                'subject' => 'Livro de JavaScript',
+                'description' => 'Este livro de JavaScript é muito bom.',
+                'date_creation' => now(),
+                'status' => 'Aberto'
+            ]);
+
+            Ticket::create([
+                'subject' => 'Livro de SQL',
+                'description' => 'Este livro de SQL é muito bom.',
+                'date_creation' => now(),
+                'status' => 'Aberto'
+            ]);
+
+            Ticket::create([
+                'subject' => 'Livro de Algoritmos',
+                'description' => 'Este livro de Algoritmos é muito bom.',
+                'date_creation' => now(),
+                'status' => 'Aberto'
+            ]);
+
+            Ticket::create([
+                'subject' => 'Livro de Design Patterns',
+                'description' => 'Este livro de Design Patterns é muito bom.',
+                'date_creation' => now(),
+                'status' => 'Aberto'
+            ]);
+
+            Ticket::create([
+                'subject' => 'Livro de Machine Learning',
+                'description' => 'Este livro de Machine Learning é muito bom.',
+                'date_creation' => now(),
+                'status' => 'Aberto'
+            ]);
         }
-            
     }
 }

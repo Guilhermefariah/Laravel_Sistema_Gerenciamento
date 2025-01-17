@@ -1,8 +1,9 @@
 import AuthenticatedLayout from "@/Layouts/AuthenticatedLayout";
 import InfoButton from "@/Components/Button/InfoButton";
-import PrimaryButton from "@/Components/Button/PrimaryButton";
-import WarningButton from "@/Components/Button/WarningButton";
+import PrimaryButton from "@/Components/Button/ViewButton";
 import { Head, Link, useForm } from "@inertiajs/react";
+import UpdateButton from "@/Components/Button/UpdateButton";
+import ViewButton from "@/Components/Button/ViewButton";
 
 export default function SellerEdit({ seller }) {
     const { data, setData, put, processing, errors } = useForm({
@@ -35,18 +36,14 @@ export default function SellerEdit({ seller }) {
                         <h3 className="text-lg">Editar vendedor</h3>
                         <div className="flex space-x-1">
                             <Link href={route("sellers.index")}>
-                                <InfoButton className="text-sm">
-                                    Lista de vendedores
-                                </InfoButton>
+                                <InfoButton className="text-sm" />
                             </Link>
                             <Link
                                 href={route("sellers.show", {
                                     seller: seller.id,
                                 })}
                             >
-                                <PrimaryButton className="text-sm">
-                                    Visualizar
-                                </PrimaryButton>
+                                <ViewButton className="text-sm" />
                             </Link>
                         </div>
                     </div>
@@ -179,13 +176,12 @@ export default function SellerEdit({ seller }) {
                             </div>
 
                             <div className="flex justify-end">
-                                <WarningButton
+                                <UpdateButton
                                     type="submit"
                                     disabled={processing}
                                     className="text-sm"
-                                >
-                                    Salvar
-                                </WarningButton>
+                                />
+                                   
                             </div>
                         </form>
                     </div>

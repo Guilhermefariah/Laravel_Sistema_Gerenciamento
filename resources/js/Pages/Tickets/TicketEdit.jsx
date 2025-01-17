@@ -1,8 +1,9 @@
 import AuthenticatedLayout from "@/Layouts/AuthenticatedLayout";
 import InfoButton from "@/Components/Button/InfoButton";
-import PrimaryButton from "@/Components/Button/PrimaryButton";
+import PrimaryButton from "@/Components/Button/ViewButton";
 import WarningButton from "@/Components/Button/WarningButton";
 import { Head, Link, useForm } from "@inertiajs/react";
+import UpdateButton from "@/Components/Button/UpdateButton";
 
 export default function TicketEdit({ ticket }) {
     const { data, setData, put, processing, errors } = useForm({
@@ -33,10 +34,10 @@ export default function TicketEdit({ ticket }) {
                         <h3 className="text-lg">Editar</h3>
                         <div className="flex space-x-1">
                             <Link href={route("tickets.index")}>
-                                <InfoButton className="text-sm">Lista de tickets</InfoButton>
+                                <InfoButton className="text-sm" />
                             </Link>
                             <Link href={route("tickets.show", { ticket: ticket.id })}>
-                                <PrimaryButton className="text-sm">Visualizar</PrimaryButton>
+                                <PrimaryButton className="text-sm" />
                             </Link>
                         </div>
                     </div>
@@ -125,13 +126,11 @@ export default function TicketEdit({ ticket }) {
                             </div>
 
                             <div className="flex justify-end">
-                                <WarningButton
+                                <UpdateButton
                                     type="submit"
                                     disabled={processing}
                                     className="text-sm"
-                                >
-                                    Salvar
-                                </WarningButton>
+                                />
                             </div>
                         </form>
                     </div>

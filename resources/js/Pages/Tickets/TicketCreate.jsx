@@ -1,7 +1,7 @@
 import AuthenticatedLayout from "@/Layouts/AuthenticatedLayout";
 import InfoButton from "@/Components/Button/InfoButton";
-import SuccessButton from "@/Components/Button/SuccessButton";
 import { Head, Link, useForm } from "@inertiajs/react";
+import CheckButton from "@/Components/Button/CheckButton";
 
 export default function TicketCreate() {
     const { data, setData, post, processing, errors } = useForm({
@@ -32,7 +32,7 @@ export default function TicketCreate() {
                         <h3 className="text-lg">New ticket</h3>
                         <div className="flex space-x-4">
                             <Link href={route("tickets.index")}>
-                                <InfoButton className="text-sm">List</InfoButton>
+                                <InfoButton className="text-sm" />
                             </Link>
                         </div>
                     </div>
@@ -121,13 +121,11 @@ export default function TicketCreate() {
                             </div>
 
                             <div className="flex justify-end">
-                                <SuccessButton
+                                <CheckButton
                                     type="submit"
                                     disabled={processing}
                                     className="text-sm"
-                                >
-                                    Create ticket
-                                </SuccessButton>
+                                />
                             </div>
                         </form>
                     </div>

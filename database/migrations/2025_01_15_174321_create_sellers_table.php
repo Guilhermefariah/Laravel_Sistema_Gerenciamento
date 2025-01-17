@@ -17,7 +17,7 @@ return new class extends Migration
             $table->string('email')->unique();
             $table->string('phone');
             $table->string('status');
-            $table->json('amount_tickets');
+            $table->string('amount_tickets');
             $table->timestamps();
         });
     }

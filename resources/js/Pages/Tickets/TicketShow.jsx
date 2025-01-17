@@ -24,14 +24,10 @@ export default function TicketShow({ ticket }) {
                         <h3 className="text-lg">Detalhes do ticket</h3>
                         <div className="flex space-x-1">
                             <Link href={route("tickets.index")}>
-                                <InfoButton className="text-sm">
-                                    Lista de tickets
-                                </InfoButton>
+                                <InfoButton className="text-sm" />
                             </Link>
                             <Link href={route("tickets.edit", { ticket: ticket.id })}>
-                                <WarningButton className="text-sm">
-                                    Editar
-                                </WarningButton>
+                                <WarningButton className="text-sm" />
                             </Link>
                             <ConfirmDelete id={ticket.id} routeName="tickets.destroy" />
                         </div>

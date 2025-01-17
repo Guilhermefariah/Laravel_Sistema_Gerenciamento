@@ -1,5 +1,5 @@
 import AuthenticatedLayout from "@/Layouts/AuthenticatedLayout";
-import PrimaryButton from "@/Components/Button/PrimaryButton";
+import PrimaryButton from "@/Components/Button/ViewButton";
 import SuccessButton from "@/Components/Button/SuccessButton";
 import WarningButton from "@/Components/Button/WarningButton";
 import { AlertMessage } from "@/Components/Delete/AlertMessage/AlertMessage";
@@ -12,12 +12,12 @@ export default function SellerIndex({ sellers }) {
 
     return (
         <AuthenticatedLayout
-        header={
-            <h2 className="font-semibold text-xl text-gray-800 dark:text-gray-200 leading-tight">
-                Vendedores
-            </h2>
-        }
->
+            header={
+                <h2 className="font-semibold text-xl text-gray-800 dark:text-gray-200 leading-tight">
+                    Vendedores
+                </h2>
+            }
+        >
             <Head title="sellers" />
             <div className="py-4 max-w-7xl mx-auto sm:px-6 lg:px-8">
                 <div className="overflow-hidden bg-white shadow-lg sm:rounded-lg dark:bg-gray-800">
@@ -25,9 +25,7 @@ export default function SellerIndex({ sellers }) {
                         <h3 className="text-lg">Lista de Vendedores</h3>
                         <div className="flex space-x-4">
                             <Link href={route("sellers.create")}>
-                                <SuccessButton className="text-sm">
-                                    criar cadastro
-                                </SuccessButton>
+                                <SuccessButton className="text-sm" />
                             </Link>
                         </div>
                     </div>
@@ -82,17 +80,24 @@ export default function SellerIndex({ sellers }) {
                                         {seller.status}
                                     </td>
                                     <td className="px-6 py-2 text-sm text-gray-200 tracking-wider text-center">
-                                        <Link href={route("sellers.show", { id: seller.id, })}>
-                                            <PrimaryButton className="ms-1">
-                                                Visualizar
-                                            </PrimaryButton>
+                                        <Link
+                                            href={route("sellers.show", {
+                                                id: seller.id,
+                                            })}
+                                        >
+                                            <PrimaryButton className="ms-1" />
                                         </Link>
-                                        <Link href={route("sellers.edit", { id: seller.id })}>
-                                            <WarningButton className="ms-1">
-                                                Editar
-                                            </WarningButton>
+                                        <Link
+                                            href={route("sellers.edit", {
+                                                id: seller.id,
+                                            })}
+                                        >
+                                            <WarningButton className="ms-1" />
                                         </Link>
-                                        <ConfirmDelete routeName="sellers.destroy" resourceId={seller.id} />
+                                        <ConfirmDelete
+                                            routeName="sellers.destroy"
+                                            resourceId={seller.id}
+                                        />
                                     </td>
                                 </tr>
                             ))}

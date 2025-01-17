@@ -17,7 +17,7 @@ export default function Authenticated({ header, children }) {
                         <div className="flex">
                             <div className="shrink-0 flex items-center">
                                 <Link href="/sellers">
-                                    <ApplicationLogo className="block h-9 w-auto fill-current text-gray-800 dark:text-gray-200" />
+                                    <ApplicationLogo className="block h-9 w-auto fill-current text-gray-200 dark:text-red-600" />
                                 </Link>
                             </div>
 
@@ -26,13 +26,13 @@ export default function Authenticated({ header, children }) {
                                     href={route("sellers.index")}
                                     active={route().current("sellers.index")}
                                 >
-                                    Vendedores
+                                    <h1 className="text-lg hover:text-red-600">Vendedores</h1>
                                 </NavLink>
                                 <NavLink
                                     href={route("tickets.index")}
                                     active={route().current("tickets.index")}
                                 >
-                                    Tickets de Suporte
+                                    <h1 className="text-lg hover:text-red-600">Tickets</h1>
                                 </NavLink>
                             </div>
                         </div>

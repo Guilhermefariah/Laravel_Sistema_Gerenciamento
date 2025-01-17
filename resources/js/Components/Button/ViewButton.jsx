@@ -1,4 +1,4 @@
-export default function WarningButton({
+export default function ViewButton({
     className = "",
     disabled,
     children,
@@ -8,7 +8,7 @@ export default function WarningButton({
         <button
             {...props}
             className={
-                `inline-flex items-center px-4 py-2 bg-none border border-transparent rounded-md font-semibold text-xs text-blue-600 hover:text-white uppercase tracking-widest hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 transition ease-in-out duration-150 ${
+                `inline-flex items-center px-4 py-2 bg-green-800 border border-transparent rounded-md font-semibold text-xs text-white uppercase tracking-widest hover:bg-green-600 active:bg-green-700 focus:outline-none focus:ring-2 focus:ring-green-500 focus:ring-offset-2 dark:focus:ring-offset-gray-800 transition ease-in-out duration-150 ${
                     disabled && "opacity-25"
                 } ` + className
             }
@@ -25,9 +25,10 @@ export default function WarningButton({
                 <path
                     stroke-linecap="round"
                     stroke-linejoin="round"
-                    d="m16.862 4.487 1.687-1.688a1.875 1.875 0 1 1 2.652 2.652L10.582 16.07a4.5 4.5 0 0 1-1.897 1.13L6 18l.8-2.685a4.5 4.5 0 0 1 1.13-1.897l8.932-8.931Zm0 0L19.5 7.125M18 14v4.75A2.25 2.25 0 0 1 15.75 21H5.25A2.25 2.25 0 0 1 3 18.75V8.25A2.25 2.25 0 0 1 5.25 6H10"
+                    d="M7.5 3.75H6A2.25 2.25 0 0 0 3.75 6v1.5M16.5 3.75H18A2.25 2.25 0 0 1 20.25 6v1.5m0 9V18A2.25 2.25 0 0 1 18 20.25h-1.5m-9 0H6A2.25 2.25 0 0 1 3.75 18v-1.5M15 12a3 3 0 1 1-6 0 3 3 0 0 1 6 0Z"
                 />
             </svg>
+
             {children}
         </button>
     );

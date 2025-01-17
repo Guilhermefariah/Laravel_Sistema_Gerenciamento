@@ -12,7 +12,7 @@ class SellerController extends Controller
 {
     public function index(): Response
     {
-        $sellers = Seller::orderByDesc('id')->paginate(2);
+        $sellers = Seller::orderByDesc('id')->paginate(4);
 
         return Inertia::render('Sellers/SellerIndex', ['sellers' => $sellers]);
     }
@@ -34,9 +34,8 @@ class SellerController extends Controller
             'name' => 'required|string|max:255',
             'email' => 'required|string|email|max:255|unique:Sellers',
             'phone' => 'required|string|max:255',
-            'amount_tickets' => 'required|array',
+            'amount_tickets' => 'required',
             'status' => 'required',
-
         ], [
             'name.required' => 'O nome é obrigatório',
             'name.max' => 'O nome deve ter menos de 255 caracteres',
@@ -48,13 +47,11 @@ class SellerController extends Controller
             'phone.max' => 'O telefone deve ter menos de 255 caracteres',
         ]);
 
-        $amountTicketsJson = json_encode($request->amount_tickets);
-
         $seller = Seller::create([
             'name' => $request->name,
             'email' => $request->email,
             'phone' => $request->phone,
-            'amount_tickets' => $amountTicketsJson,
+            'amount_tickets' => $request->amount_tickets,
             'status' => $request->status
         ]);
 
@@ -70,9 +67,9 @@ class SellerController extends Controller
     {
         $request->validate([
             'name' => 'required|string|max:255',
-            'email' => 'required|string|email|max:255|unique:Sellers' . $seller->id,
+            'email' => 'required|string|email|max:255|unique:Sellers',
             'phone' => 'required|string|max:255',
-            'amount_tickets' => 'required|array',
+            'amount_tickets' => 'required',
             'status' => 'required',
         ], [
             'name.required' => 'O nome é obrigatório',
@@ -88,13 +85,11 @@ class SellerController extends Controller
             'amount_tickets.max' => 'O número de ingressos deve ter menos de 255 caracteres',
         ]);
 
-        $amountTicketsJson = json_encode($request->amount_tickets);
-
         $seller->update([
             'name' => $request->name,
             'email' => $request->email,
             'phone' => $request->phone,
-            'amount_tickets' => $amountTicketsJson,
+            'amount_tickets' => $request->amount_tickets,
             'status' => $request->status
         ]);
 

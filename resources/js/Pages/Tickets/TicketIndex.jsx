@@ -1,5 +1,5 @@
 import AuthenticatedLayout from "@/Layouts/AuthenticatedLayout";
-import PrimaryButton from "@/Components/Button/PrimaryButton";
+import PrimaryButton from "@/Components/Button/ViewButton";
 import SuccessButton from "@/Components/Button/SuccessButton";
 import WarningButton from "@/Components/Button/WarningButton";
 import { AlertMessage } from "@/Components/Delete/AlertMessage/AlertMessage";
@@ -25,9 +25,7 @@ export default function TicketIndex({ tickets }) {
                         <h3 className="text-lg">Lista de tickets</h3>
                         <div className="flex space-x-4">
                             <Link href={route("tickets.create")}>
-                                <SuccessButton className="text-sm">
-                                    Criar ticket
-                                </SuccessButton>
+                                <SuccessButton className="text-sm" />
                             </Link>
                         </div>
                     </div>
@@ -81,9 +79,7 @@ export default function TicketIndex({ tickets }) {
                                                 ticket: ticket.id,
                                             })}
                                         >
-                                            <PrimaryButton className="ms-1">
-                                                Visualizar
-                                            </PrimaryButton>
+                                            <PrimaryButton className="ms-1" />
                                         </Link>
 
                                         <Link
@@ -91,9 +87,7 @@ export default function TicketIndex({ tickets }) {
                                                 ticket: ticket.id,
                                             })}
                                         >
-                                            <WarningButton className="ms-1">
-                                                Editar
-                                            </WarningButton>
+                                            <WarningButton className="ms-1" />
                                         </Link>
                                         <ConfirmDelete
                                             id={ticket.id}
