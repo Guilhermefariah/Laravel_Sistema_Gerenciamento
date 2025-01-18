@@ -21,7 +21,13 @@ export default function SellerEdit({ seller }) {
     };
 
     return (
-        <AuthenticatedLayout>
+        <AuthenticatedLayout
+        header={
+            <h2 className="font-semibold text-xl text-gray-800 dark:text-gray-200 leading-tight">
+                Editar Vendedor
+            </h2>
+        }
+        >
             <Head title="Editar vendedor" />
 
             <div className="py-6 max-w-4xl mx-auto sm:px-6 lg:px-8">
@@ -132,9 +138,8 @@ export default function SellerEdit({ seller }) {
                                 }
                                 className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500 sm:text-sm dark:bg-gray-700 dark:border-gray-600 dark:text-gray-300"
                             >
-                                <option value="">Selecionar status</option>
-                                <option value="active">Ativado</option>
-                                <option value="inactive">Inactive</option>
+                                <option value="Ativado">Ativado</option>
+                                <option value="Inativo">Inativo</option>
                             </select>
                             {errors.status && (
                                 <span className="text-red-500">
@@ -158,7 +163,6 @@ export default function SellerEdit({ seller }) {
                                 }
                                 className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500 sm:text-sm dark:bg-gray-700 dark:border-gray-600 dark:text-gray-300"
                             >
-                                <option value="">Quantidade de tickets</option>
                                 <option value="Em aberto">Em aberto</option>
                                 <option value="Em andamento">
                                     Em andamento

@@ -34,7 +34,7 @@ class TicketController extends Controller
             'subject' => 'required|string|max:255',
             'description' => 'required|string|max:255',
             'date_creation' => 'required|string|max:255',
-            'status' => 'required',
+            'status' => 'required|string|max:255',
         ], [
             'subject.required' => 'O assunto é obrigatório',
             'subject.max' => 'O assunto deve ter menos de 255 caracteres',
@@ -42,16 +42,18 @@ class TicketController extends Controller
             'description.max' => 'A descrição deve ter menos de 255 caracteres',
             'date_creation.required' => 'A data de criação é obrigatória',
             'date_creation.max' => 'A data de criação deve ter menos de 255 caracteres',
+            'status.required' => 'O status é obrigatório',
+            'status.max' => 'O status deve ter menos de 255 caracteres',
         ]);
 
         $ticket = Ticket::create([
             'subject' => $request->subject,
             'description' => $request->description,
             'date_creation' => $request->date_creation,
-            'status' => $request->status
+            'status' => $request->status,
         ]);
         
-        return Redirect::route('tickets.show', ['ticket' => $ticket->id])->with('success', 'Ticket created successfully');
+        return Redirect::route('tickets.show', ['ticket' => $ticket->id])->with('success', 'Ticket criado com sucesso');
     }
 
     public function edit(Ticket $ticket): Response
@@ -65,7 +67,7 @@ class TicketController extends Controller
             'subject' => 'required|string|max:255',
             'description' => 'required|string|max:255',
             'date_creation' => 'required|string|max:255',
-            'status' => 'required',
+            'status' => 'required|string|max:255',
         ], [
             'subject.required' => 'O assunto é obrigatório',
             'subject.max' => 'O assunto deve ter menos de 255 caracteres',
@@ -73,22 +75,24 @@ class TicketController extends Controller
             'description.max' => 'A descrição deve ter menos de 255 caracteres',
             'date_creation.required' => 'A data de criação é obrigatória',
             'date_creation.max' => 'A data de criação deve ter menos de 255 caracteres',
+            'status.required' => 'O status é obrigatório',
+            'status.max' => 'O status deve ter menos de 255 caracteres',
         ]);
 
         $ticket->update([
             'subject' => $request->subject,
             'description' => $request->description,
             'date_creation' => $request->date_creation,
-            'status' => $request->status
+            'status' => $request->status,
         ]);
 
-        return Redirect::route('tickets.show', ['ticket' => $ticket->id])->with('success', 'Ticket updated successfully');
+        return Redirect::route('tickets.show', ['ticket' => $ticket->id])->with('success', 'Ticket atualizado com sucesso');
     }
 
     public function destroy(Ticket $ticket)
     {
         $ticket->delete();
 
-        return Redirect::route('tickets.index')->with('success', 'Ticket deleted successfully');
+        return Redirect::route('tickets.index')->with('success', 'Ticket excluido com sucesso');
     }
 }

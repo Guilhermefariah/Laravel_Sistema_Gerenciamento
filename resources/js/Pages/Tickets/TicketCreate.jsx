@@ -17,9 +17,15 @@ export default function TicketCreate() {
     };
 
     return (
-        <AuthenticatedLayout>
+        <AuthenticatedLayout
+            header={
+                <h2 className="font-semibold text-xl text-gray-800 dark:text-gray-200 leading-tight">
+                    Criar Ticket
+                </h2>
+            }
+        >
             <Head title="Create ticket" />
-            
+
             <div className="py-6 max-w-4xl mx-auto sm:px-6 lg:px-8">
                 <div className="bg-white dark:bg-gray-800 shadow-md rounded-lg p-6">
                     <div className="flex justify-between items-center mb-6">
@@ -44,11 +50,15 @@ export default function TicketCreate() {
                                 type="text"
                                 placeholder="Assunto do ticket"
                                 value={data.subject}
-                                onChange={(e) => setData("subject", e.target.value)}
+                                onChange={(e) =>
+                                    setData("subject", e.target.value)
+                                }
                                 className="mt-2 block w-full rounded-lg border-gray-300 dark:border-gray-600 dark:bg-gray-700 dark:text-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500 sm:text-sm transition-all"
                             />
                             {errors.subject && (
-                                <span className="text-red-500 text-sm">{errors.subject}</span>
+                                <span className="text-red-500 text-sm">
+                                    {errors.subject}
+                                </span>
                             )}
                         </div>
 
@@ -63,11 +73,15 @@ export default function TicketCreate() {
                                 id="description"
                                 placeholder="Descrição do ticket"
                                 value={data.description}
-                                onChange={(e) => setData("description", e.target.value)}
+                                onChange={(e) =>
+                                    setData("description", e.target.value)
+                                }
                                 className="mt-2 block w-full rounded-lg border-gray-300 dark:border-gray-600 dark:bg-gray-700 dark:text-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500 sm:text-sm transition-all"
                             ></textarea>
                             {errors.description && (
-                                <span className="text-red-500 text-sm">{errors.description}</span>
+                                <span className="text-red-500 text-sm">
+                                    {errors.description}
+                                </span>
                             )}
                         </div>
 
@@ -82,11 +96,15 @@ export default function TicketCreate() {
                                 id="date_creation"
                                 type="date"
                                 value={data.date_creation}
-                                onChange={(e) => setData("date_creation", e.target.value)}
+                                onChange={(e) =>
+                                    setData("date_creation", e.target.value)
+                                }
                                 className="mt-2 block w-full rounded-lg border-gray-300 dark:border-gray-600 dark:bg-gray-700 dark:text-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500 sm:text-sm transition-all"
                             />
                             {errors.date_creation && (
-                                <span className="text-red-500 text-sm">{errors.date_creation}</span>
+                                <span className="text-red-500 text-sm">
+                                    {errors.date_creation}
+                                </span>
                             )}
                         </div>
 
@@ -100,24 +118,27 @@ export default function TicketCreate() {
                             <select
                                 id="status"
                                 value={data.status}
-                                onChange={(e) => setData("status", e.target.value)}
+                                onChange={(e) =>
+                                    setData("status", e.target.value)
+                                }
                                 className="mt-2 block w-full rounded-lg border-gray-300 dark:border-gray-600 dark:bg-gray-700 dark:text-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500 sm:text-sm transition-all"
                             >
                                 <option value="">Selecionar Status</option>
                                 <option value="Aberto">Aberto</option>
-                                <option value="Em Progresso">Em Progresso</option>
+                                <option value="Em Progresso">
+                                    Em Progresso
+                                </option>
                                 <option value="Fechado">Fechado</option>
                             </select>
                             {errors.status && (
-                                <span className="text-red-500 text-sm">{errors.status}</span>
+                                <span className="text-red-500 text-sm">
+                                    {errors.status}
+                                </span>
                             )}
                         </div>
 
-                        <div className="flex justify-end">
-                            <CheckButton
-                                type="submit"
-                                disabled={processing}
-                            />
+                        <div className="flex justify-start">
+                            <CheckButton type="submit" disabled={processing} />
                         </div>
                     </form>
                 </div>

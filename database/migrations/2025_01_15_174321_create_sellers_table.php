@@ -16,10 +16,8 @@ return new class extends Migration
             $table->string('name');
             $table->string('email')->unique();
             $table->string('phone');
-            $table->enum('status', ['Active', 'Inactive'])->default('Active');
-            $table->unsignedInteger('open_tickets')->default(0);
-            $table->unsignedInteger('in_progress_tickets')->default(0);
-            $table->unsignedInteger('resolved_tickets')->default(0);
+            $table->string('status');
+            $table->string('amount_tickets');
             $table->timestamps();
         });
     }

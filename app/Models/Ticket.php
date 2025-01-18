@@ -9,15 +9,15 @@ class Ticket extends Model
 {
     use HasFactory;
 
-    protected $fillable = ['subject', 'description', 'date_creation', 'date_resolution', 'status', 'seller_id'];
+    protected $fillable = [
+        'subject',
+        'description',
+        'date_creation',
+        'status',
+    ];
 
     public function seller()
     {
         return $this->belongsTo(Seller::class);
-    }
-
-    public function isDelayed()
-    {
-        return $this->status === 'Delayed' && $this->date_creation->diffInHours(now()) > 24;
     }
 }

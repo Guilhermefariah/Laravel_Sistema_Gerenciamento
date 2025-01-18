@@ -3,7 +3,6 @@
 namespace Database\Seeders;
 
 use App\Models\Seller;
-use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 
 class SellerSeeder extends Seeder
@@ -18,15 +17,16 @@ class SellerSeeder extends Seeder
                 'name' => 'João',
                 'email' => 'joao@gmail.com',
                 'phone' => '11999999999',
-                'status' => 'ativo',
+                'status' => 'Inativo',
                 'amount_tickets' => 'Em aberto',
+
             ]);
 
             Seller::create([
                 'name' => 'Maria',
                 'email' => 'maria@gmail.com',
                 'phone' => '11999999999',
-                'status' => 'ativo',
+                'status' => 'Inativo',
                 'amount_tickets' => 'Em andamento',
             ]);
 
@@ -34,7 +34,7 @@ class SellerSeeder extends Seeder
                 'name' => 'Pedro',
                 'email' => 'pedro@gmail.com',
                 'phone' => '11999999999',
-                'status' => 'ativo',
+                'status' => 'Inativo',
                 'amount_tickets' => 'Em andamento',
             ]);
 
@@ -42,7 +42,7 @@ class SellerSeeder extends Seeder
                 'name' => 'Ana',
                 'email' => 'ana@gmail.com',
                 'phone' => '11999999999',
-                'status' => 'ativo',
+                'status' => 'Inativo',
                 'amount_tickets' => 'Resolvido',
             ]);
 
@@ -50,7 +50,7 @@ class SellerSeeder extends Seeder
                 'name' => 'Lucas',
                 'email' => 'lucas@gmail.com',
                 'phone' => '11999999999',
-                'status' => 'ativo',
+                'status' => 'Inativo',
                 'amount_tickets' => 'Resolvido',
             ]);
 
@@ -58,7 +58,7 @@ class SellerSeeder extends Seeder
                 'name' => 'Carlos',
                 'email' => 'carlos@gmail.com',
                 'phone' => '11988888888',
-                'status' => 'ativo',
+                'status' => 'Inativo',
                 'amount_tickets' => 'Em aberto',
             ]);
 
@@ -66,7 +66,7 @@ class SellerSeeder extends Seeder
                 'name' => 'Juliana',
                 'email' => 'juliana@gmail.com',
                 'phone' => '11977777777',
-                'status' => 'ativo',
+                'status' => 'Inativo',
                 'amount_tickets' => 'Em andamento',
             ]);
 
@@ -74,7 +74,7 @@ class SellerSeeder extends Seeder
                 'name' => 'Rafael',
                 'email' => 'rafael@gmail.com',
                 'phone' => '11966666666',
-                'status' => 'ativo',
+                'status' => 'Inativo',
                 'amount_tickets' => 'Em andamento',
             ]);
 
@@ -82,7 +82,7 @@ class SellerSeeder extends Seeder
                 'name' => 'Beatriz',
                 'email' => 'beatriz@gmail.com',
                 'phone' => '11955555555',
-                'status' => 'ativo',
+                'status' => 'Inativo',
                 'amount_tickets' => 'Resolvido',
             ]);
 
@@ -90,7 +90,7 @@ class SellerSeeder extends Seeder
                 'name' => 'Gabriel',
                 'email' => 'gabriel@gmail.com',
                 'phone' => '11944444444',
-                'status' => 'ativo',
+                'status' => 'Inativo',
                 'amount_tickets' => 'Resolvido',
             ]);
 
@@ -98,7 +98,7 @@ class SellerSeeder extends Seeder
                 'name' => 'Fernanda',
                 'email' => 'fernanda@gmail.com',
                 'phone' => '11933333333',
-                'status' => 'ativo',
+                'status' => 'Inativo',
                 'amount_tickets' => 'Em aberto',
             ]);
         }

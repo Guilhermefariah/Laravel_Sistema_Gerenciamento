@@ -12,7 +12,7 @@ export default function TicketShow({ ticket }) {
         <AuthenticatedLayout
             header={
                 <h2 className="font-semibold text-xl text-gray-800 dark:text-gray-200 leading-tight">
-                    Tickets
+                    Detalhes do ticket
                 </h2>
             }
         >

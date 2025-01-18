@@ -12,7 +12,13 @@ export default function SellerIndex({ sellers }) {
     const { flash } = usePage().props;
 
     return (
-        <AuthenticatedLayout>
+        <AuthenticatedLayout
+            header={
+                <h2 className="font-semibold text-xl text-gray-800 dark:text-gray-200 leading-tight">
+                    Vendedores
+                </h2>
+            }
+        >
             <Head title="vendedores" />
 
             <div className="py-4 max-w-7xl mx-auto sm:px-6 lg:px-8">
@@ -26,14 +32,16 @@ export default function SellerIndex({ sellers }) {
                         </div>
                     </div>
 
-                    <AlertMessage message={flash} />
 
                     <table className="min-w-full divide-y divide-gray-200 dark:divide-gray-700">
                         <TableHeadSeller />
 
                         <tbody className="bg-white divide-y divide-gray-200 dark:bg-gray-800 dark:divide-gray-700">
                             {sellers.data.map((seller) => (
-                                <tr key={seller.id} className="hover:bg-gray-100 dark:hover:bg-gray-700 transition duration-300">
+                                <tr
+                                    key={seller.id}
+                                    className="hover:bg-gray-100 dark:hover:bg-gray-700 transition duration-300"
+                                >
                                     <td className="px-6 py-2 text-sm text-gray-200 tracking-wider">
                                         {seller.id}
                                     </td>
@@ -82,6 +90,8 @@ export default function SellerIndex({ sellers }) {
                     />
                 </div>
             </div>
+            <AlertMessage message={flash} />
+
         </AuthenticatedLayout>
     );
 }

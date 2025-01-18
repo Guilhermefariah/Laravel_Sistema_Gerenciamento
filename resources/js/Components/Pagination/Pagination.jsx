@@ -7,44 +7,25 @@ export const Pagination = ({ links, currentPage }) => {
         <div className="flex justify-center mt-8 mb-8 space-x-4">
             {links
                 .filter((link, index) => {
-                    const isPrevious = link.label === "&laquo; Previous";
-                    const isNext = link.label === "Next &raquo;";
-                    const isCurrent = link.active;
-                    const isPageBeforeOrAfter =
-                        index === currentPage ||
-                        index === currentPage - 1 ||
-                        index === currentPage + 1;
-
-                    return (
-                        isPrevious || isNext || isCurrent || isPageBeforeOrAfter
-                    );
+                    const isSpecial = ["&laquo; Previous", "Next &raquo;"].includes(link.label);
+                    const isNearCurrent = Math.abs(index - currentPage) <= 1;
+                    return link.active || isSpecial || isNearCurrent;
                 })
                 .map((link, index) => (
                     <motion.div
                         key={index}
-                        whileHover={{ scale: 1.1, rotate: 2 }}
-                        whileTap={{ scale: 1.1 }}
-                        transition={{
-                            type: "spring",
-                            stiffness: 200,
-                            damping: 10,
-                        }}
-                        className={`${
-                            link.active
-                                ? "shadow-lg transform scale-105"
-                                : "shadow-md"
-                        }`}
+                        whileHover={{ scale: 1.1 }}
+                        whileTap={{ scale: 0.95 }}
+                        className="shadow-md rounded-lg"
                     >
                         <Link
-                            href={link.url ? link.url : "#"}
+                            href={link.url || "#"}
                             as="button"
-                            className={`px-6 py-1 text-lg font-medium border rounded-lg transition-colors duration-300 ${
+                            className={`px-6 py-1 text-lg font-medium border transition-all rounded-lg ${
                                 link.active
-                                    ? "bg-gradient-to-r from-gray-600 to-gray-600hover:text-red-800  text-white hover:text-red-800 cursor-default"
-                                    : "bg-gray-600 text-white border-gray-300 hover:bg-gradient-to-r hover:from-gray-600 hover:to-gray-900 hover:text-red-800"
-                            } ${
-                                !link.url ? "cursor-not-allowed opacity-50" : ""
-                            }`}
+                                    ? "bg-gray-700 text-white cursor-default"
+                                    : "bg-gray-500 text-white hover:bg-gray-700"
+                            } ${!link.url && "cursor-not-allowed opacity-50"}`}
                             onClick={(e) => !link.url && e.preventDefault()}
                         >
                             {link.label === "&laquo; Previous"

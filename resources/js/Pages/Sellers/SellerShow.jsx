@@ -9,7 +9,13 @@ export default function SellerShow({ seller }) {
     const { flash } = usePage().props;
 
     return (
-        <AuthenticatedLayout>
+        <AuthenticatedLayout
+            header={
+                <h2 className="font-semibold text-xl text-gray-800 dark:text-gray-200 leading-tight">
+                    Detalhes do Vendedor
+                </h2>
+            }
+        >
             <Head title={`Vendedores - ${seller.name}`} />
 
             <div className="py-4 max-w-7xl mx-auto sm:px-6 lg:px-8">

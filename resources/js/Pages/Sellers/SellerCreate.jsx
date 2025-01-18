@@ -18,7 +18,13 @@ export default function SellerCreate() {
     };
 
     return (
-        <AuthenticatedLayout>
+        <AuthenticatedLayout
+            header={
+                <h2 className="font-semibold text-xl text-gray-800 dark:text-gray-200 leading-tight">
+                    Novo Vendedor
+                </h2>
+            }
+        >
             <Head title="Create Seller" />
 
             <div className="py-6 max-w-4xl mx-auto sm:px-6 lg:px-8">
@@ -122,9 +128,8 @@ export default function SellerCreate() {
                                 }
                                 className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500 sm:text-sm dark:bg-gray-700 dark:border-gray-600 dark:text-gray-300"
                             >
-                                <option value="" disabled>Selecione</option>
-                                <option value="active">Ativo</option>
-                                <option value="inactive">Inativo</option>
+                                <option value="Ativo">Ativo</option>
+                                <option value="Inativo">Inativo</option>
                             </select>
                             {errors.status && (
                                 <span className="text-red-500 text-sm">
@@ -151,10 +156,11 @@ export default function SellerCreate() {
                                 }
                                 className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500 sm:text-sm dark:bg-gray-700 dark:border-gray-600 dark:text-gray-300"
                             >
-                                <option value="" disabled>Quantidade de tickets</option>
-                                <option value="in_open">Em aberto</option>
-                                <option value="in_progress">Em andamento</option>
-                                <option value="resolved">Resolvido</option>
+                                <option value="Em Aberto"> Em Aberto </option>
+                                <option value="Em Andamento">
+                                    Em Andamento
+                                </option>
+                                <option value="Resolvido">Resolvido</option>
                             </select>
 
                             {errors.amount_tickets && (
@@ -164,9 +170,8 @@ export default function SellerCreate() {
                             )}
                         </div>
 
-                        <div className="flex justify-end">
+                        <div className="flex justify-start">
                             <CheckButton type="submit" disabled={processing} />
-
                         </div>
                     </form>
                 </div>
