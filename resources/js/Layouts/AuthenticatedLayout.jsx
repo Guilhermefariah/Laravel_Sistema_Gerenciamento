@@ -65,7 +65,9 @@ export default function Authenticated({ header, children }) {
                                 <Dropdown.Content>
                                     <Dropdown.Link
                                         href={route("sellers.index")}
-                                        method="post"
+                                        active={route().current(
+                                            "sellers.index"
+                                        )}
                                         as="button"
                                     >
                                         Sair
