@@ -137,7 +137,7 @@ export default function TicketCreate() {
                             )}
                         </div>
 
-                        <div className="flex justify-start">
+                        <div className="flex justify-end">
                             <CheckButton type="submit" disabled={processing} />
                         </div>
                     </form>

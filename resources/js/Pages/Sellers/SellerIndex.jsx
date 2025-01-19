@@ -1,15 +1,15 @@
-import AuthenticatedLayout from "@/Layouts/AuthenticatedLayout"
-import PrimaryButton from "@/Components/Button/ViewButton"
-import SuccessButton from "@/Components/Button/SuccessButton"
-import WarningButton from "@/Components/Button/WarningButton"
-import { AlertMessage } from "@/Components/Delete/AlertMessage/AlertMessage"
-import { ConfirmDelete } from "@/Components/Delete/ConfirmDelete"
-import { Pagination } from "@/Components/Pagination/Pagination"
-import { Head, Link, usePage } from "@inertiajs/react"
-import TableHeadSeller from "@/Components/Table/TableSeller/TableHeadSeller"
+import AuthenticatedLayout from "@/Layouts/AuthenticatedLayout";
+import PrimaryButton from "@/Components/Button/ViewButton";
+import SuccessButton from "@/Components/Button/SuccessButton";
+import WarningButton from "@/Components/Button/WarningButton";
+import { AlertMessage } from "@/Components/Delete/AlertMessage/AlertMessage";
+import { ConfirmDelete } from "@/Components/Delete/ConfirmDelete";
+import { Pagination } from "@/Components/Pagination/Pagination";
+import { Head, Link, usePage } from "@inertiajs/react";
+import TableHeadSeller from "@/Components/Table/TableSeller/TableHeadSeller";
 
 export default function SellerIndex({ sellers }) {
-    const { flash } = usePage().props
+    const { flash } = usePage().props;
 
     return (
         <AuthenticatedLayout
@@ -28,65 +28,67 @@ export default function SellerIndex({ sellers }) {
                             <SuccessButton className="text-sm" />
                         </Link>
                     </div>
+                    <AlertMessage message={flash} />
 
-                    <table className="min-w-full divide-y divide-gray-100">
-                        <TableHeadSeller />
+                    <div className="relative overflow-x-auto shadow-md sm:rounded-lg">
+                        <table className="min-w-full divide-y divide-gray-100">
+                            <TableHeadSeller />
 
-                        <tbody className="bg-gray-200 divide-y divide-gray-100 cursor-pointer">
-                            {sellers.data.map((seller) => (
-                                <tr
-                                    key={seller.id}
-                                    className="hover:bg-gray-100 transition duration-300"
-                                >
-                                    <td className="px-6 py-2 text-sm text-gray-800 hover:text-blue-600 tracking-wider">
-                                        {seller.id}
-                                    </td>
-                                    <td className="px-6 py-2 text-sm text-gray-800 hover:text-blue-600 tracking-wider">
-                                        {seller.name}
-                                    </td>
-                                    <td className="px-6 py-2 text-sm text-gray-800 hover:text-blue-600 tracking-wider">
-                                        {seller.email}
-                                    </td>
-                                    <td className="px-6 py-2 text-sm text-gray-800 hover:text-blue-600 tracking-wider">
-                                        {seller.phone}
-                                    </td>
-                                    <td className="px-6 py-2 text-sm text-gray-800 hover:text-blue-600 tracking-wider">
-                                        {seller.amount_tickets}
-                                    </td>
-                                    <td className="px-6 py-2 text-sm text-gray-800 hover:text-blue-600 tracking-wider">
-                                        {seller.status}
-                                    </td>
-                                    <td className="px-6 py-2 text-sm text-center text-gray-800 hover:text-blue-600 tracking-wider">
-                                        <Link
-                                            href={route("sellers.show", {
-                                                id: seller.id,
-                                            })}
-                                        >
-                                            <PrimaryButton className="ms-1" />
-                                        </Link>
-                                        <Link
-                                            href={route("sellers.edit", {
-                                                id: seller.id,
-                                            })}
-                                        >
-                                            <WarningButton className="mt-1" />
-                                        </Link>
-                                        <ConfirmDelete
-                                            routeName="sellers.destroy"
-                                            id={seller.id}
-                                        />
-                                    </td>
-                                </tr>
-                            ))}
-                        </tbody>
-                    </table>
+                            <tbody className="bg-gray-200 divide-y divide-gray-100 cursor-pointer">
+                                {sellers.data.map((seller) => (
+                                    <tr
+                                        key={seller.id}
+                                        className="hover:bg-gray-100 transition duration-300"
+                                    >
+                                        <td className="px-6 py-2 text-sm text-gray-800 hover:text-blue-600 tracking-wider">
+                                            {seller.id}
+                                        </td>
+                                        <td className="px-6 py-2 text-sm text-gray-800 hover:text-blue-600 tracking-wider">
+                                            {seller.name}
+                                        </td>
+                                        <td className="px-6 py-2 text-sm text-gray-800 hover:text-blue-600 tracking-wider">
+                                            {seller.email}
+                                        </td>
+                                        <td className="px-6 py-2 text-sm text-gray-800 hover:text-blue-600 tracking-wider">
+                                            {seller.phone}
+                                        </td>
+                                        <td className="px-6 py-2 text-sm text-gray-800 hover:text-blue-600 tracking-wider">
+                                            {seller.amount_tickets}
+                                        </td>
+                                        <td className="px-6 py-2 text-sm text-gray-800 hover:text-blue-600 tracking-wider">
+                                            {seller.status}
+                                        </td>
+                                        <td className="px-6 py-2 text-sm text-center text-gray-800 hover:text-blue-600 tracking-wider">
+                                            <Link
+                                                href={route("sellers.show", {
+                                                    id: seller.id,
+                                                })}
+                                            >
+                                                <PrimaryButton className="ms-1" />
+                                            </Link>
+                                            <Link
+                                                href={route("sellers.edit", {
+                                                    id: seller.id,
+                                                })}
+                                            >
+                                                <WarningButton className="ms-1" />
+                                            </Link>
+                                            <ConfirmDelete
+                                                routeName="sellers.destroy"
+                                                id={seller.id}
+                                            />
+                                        </td>
+                                    </tr>
+                                ))}
+                            </tbody>
+                        </table>
+                    </div>
                     <Pagination
                         links={sellers.links}
                         currentPage={sellers.current_page}
                     />
                 </div>
             </div>
-            <AlertMessage message={flash} />
         </AuthenticatedLayout>
-    )
+    );
 }

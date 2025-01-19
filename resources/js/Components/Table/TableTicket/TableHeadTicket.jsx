@@ -36,7 +36,7 @@ export default function TableHeadTicket() {
                         />
                     </svg>
                 </th>
-                <th className="px-10 py-3 text-left text-sm font-medium text-blue-600 hover:text-gray-700 tracking-wider hover:bg-gray-50 hover:rounded-lg">
+                <th className="px-20 py-3 text-left text-sm font-medium text-blue-600 hover:text-gray-700 tracking-wider hover:bg-gray-50 hover:rounded-lg">
                     <svg
                         xmlns="http://www.w3.org/2000/svg"
                         fill="none"
@@ -52,7 +52,7 @@ export default function TableHeadTicket() {
                         />
                     </svg>
                 </th>
-                <th className="px-10 py-3 text-left text-sm font-medium text-blue-600 hover:text-gray-700 tracking-wider hover:bg-gray-50 hover:rounded-lg">
+                <th className="px-14 py-3 text-left text-sm font-medium text-blue-600 hover:text-gray-700 tracking-wider hover:bg-gray-50 hover:rounded-lg">
                     <svg
                         xmlns="http://www.w3.org/2000/svg"
                         fill="none"
@@ -68,7 +68,7 @@ export default function TableHeadTicket() {
                         />
                     </svg>
                 </th>
-                <th className="px-10 py-3 text-left text-sm font-medium text-blue-600 hover:text-gray-700 tracking-wider hover:bg-gray-50 hover:rounded-lg">
+                <th className="px-8 py-3 text-left text-sm font-medium text-blue-600 hover:text-gray-700 tracking-wider hover:bg-gray-50 hover:rounded-lg">
                     <svg
                         xmlns="http://www.w3.org/2000/svg"
                         fill="none"
@@ -84,7 +84,7 @@ export default function TableHeadTicket() {
                         />
                     </svg>
                 </th>
-                <th className="px-10 py-3 text-left text-sm font-medium text-blue-600 hover:text-gray-700 tracking-wider hover:bg-gray-50 hover:rounded-lg">
+                <th className="flex px-6 py-3 text-center justify-center text-sm font-medium text-blue-600 hover:text-gray-700 tracking-wider hover:bg-gray-50 rounded-lg">
                     <svg
                         xmlns="http://www.w3.org/2000/svg"
                         fill="none"
