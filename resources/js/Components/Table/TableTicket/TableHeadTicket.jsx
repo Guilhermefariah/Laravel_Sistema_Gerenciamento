@@ -2,9 +2,9 @@ import React from "react";
 
 export default function TableHeadTicket() {
     return (
-        <thead className="bg-gray-50 dark:bg-gray-700">
+        <thead className="bg-gray-200 max-w-2 cursor-pointer">
             <tr>
-                <th className="px-6 py-3 text-left text-sm font-medium text-gray-200 tracking-wider">
+                <th className="px-6 py-3 text-left text-sm font-medium text-blue-600 hover:text-gray-700 tracking-wider hover:bg-gray-50 hover:rounded-lg">
                     <svg
                         xmlns="http://www.w3.org/2000/svg"
                         fill="none"
@@ -20,7 +20,7 @@ export default function TableHeadTicket() {
                         />
                     </svg>
                 </th>
-                <th className="px-6 py-3 text-left text-sm font-medium text-gray-200 tracking-wider">
+                <th className="px-10 py-3 text-left text-sm font-medium text-blue-600 hover:text-gray-700 tracking-wider hover:bg-gray-50 hover:rounded-lg">
                     <svg
                         xmlns="http://www.w3.org/2000/svg"
                         fill="none"
@@ -36,7 +36,7 @@ export default function TableHeadTicket() {
                         />
                     </svg>
                 </th>
-                <th className="px-6 py-3 text-left text-sm font-medium text-gray-200 tracking-wider">
+                <th className="px-10 py-3 text-left text-sm font-medium text-blue-600 hover:text-gray-700 tracking-wider hover:bg-gray-50 hover:rounded-lg">
                     <svg
                         xmlns="http://www.w3.org/2000/svg"
                         fill="none"
@@ -52,7 +52,7 @@ export default function TableHeadTicket() {
                         />
                     </svg>
                 </th>
-                <th className="px-6 py-3 text-left text-sm font-medium text-gray-200 tracking-wider">
+                <th className="px-10 py-3 text-left text-sm font-medium text-blue-600 hover:text-gray-700 tracking-wider hover:bg-gray-50 hover:rounded-lg">
                     <svg
                         xmlns="http://www.w3.org/2000/svg"
                         fill="none"
@@ -68,7 +68,7 @@ export default function TableHeadTicket() {
                         />
                     </svg>
                 </th>
-                <th className="px-6 py-3 text-left text-sm font-medium text-gray-200 tracking-wider">
+                <th className="px-10 py-3 text-left text-sm font-medium text-blue-600 hover:text-gray-700 tracking-wider hover:bg-gray-50 hover:rounded-lg">
                     <svg
                         xmlns="http://www.w3.org/2000/svg"
                         fill="none"
@@ -84,7 +84,7 @@ export default function TableHeadTicket() {
                         />
                     </svg>
                 </th>
-                <th className="px-6 py-3 text-center text-sm font-medium text-gray-200 tracking-wider">
+                <th className="px-10 py-3 text-left text-sm font-medium text-blue-600 hover:text-gray-700 tracking-wider hover:bg-gray-50 hover:rounded-lg">
                     <svg
                         xmlns="http://www.w3.org/2000/svg"
                         fill="none"

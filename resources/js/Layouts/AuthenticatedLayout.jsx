@@ -10,13 +10,13 @@ export default function Authenticated({ header, children }) {
         useState(false);
 
     return (
-        <div className="min-h-screen bg-gradient-to-b from-gray-100 to-gray-300 dark:from-gray-900 dark:to-gray-800">
-            <nav className="bg-white dark:bg-gray-800 shadow-lg">
+        <div className="min-h-screen bg-gray-50">
+            <nav className="bg-gray-50 shadow-lg">
                 <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                     <div className="flex justify-between h-16">
                         <div className="flex items-center">
                             <Link href="/sellers">
-                                <ApplicationLogo className="block h-9 w-auto fill-current text-red-500 hover:text-red-700 transition duration-300" />
+                                <ApplicationLogo className="block h-9 w-auto fill-current text-blue-500 hover:text-blue-600 transition duration-300" />
                             </Link>
 
                             <div className="hidden space-x-8 sm:ms-10 sm:flex">
@@ -24,7 +24,7 @@ export default function Authenticated({ header, children }) {
                                     href={route("sellers.index")}
                                     active={route().current("sellers.index")}
                                 >
-                                    <h1 className="text-lg text-gray-800 dark:text-gray-400 hover:text-red-500 transition duration-300">
+                                    <h1 className="text-2xl hover:text-blue-500 transition duration-300">
                                         Vendedores
                                     </h1>
                                 </NavLink>
@@ -32,7 +32,7 @@ export default function Authenticated({ header, children }) {
                                     href={route("tickets.index")}
                                     active={route().current("tickets.index")}
                                 >
-                                    <h1 className="text-lg text-gray-800 dark:text-gray-400 hover:text-red-500 transition duration-300">
+                                    <h1 className="text-2xl hover:text-blue-500 transition duration-300">
                                         Tickets
                                     </h1>
                                 </NavLink>
@@ -44,20 +44,20 @@ export default function Authenticated({ header, children }) {
                                 <Dropdown.Trigger>
                                     <button
                                         type="button"
-                                        className="inline-flex items-center px-4 py-2 bg-gray-200 dark:bg-gray-700 text-gray-600 dark:text-gray-300 font-semibold rounded-lg shadow-lg hover:bg-gray-300 dark:hover:bg-gray-600 transition duration-300"
+                                        className="inline-flex items-center px-4 py-2 text-gray-700  hover:text-blue-500 font-semibold rounded-lg bg-none transition duration-300"
                                     >
                                         <svg
                                             xmlns="http://www.w3.org/2000/svg"
                                             fill="none"
                                             viewBox="0 0 24 24"
-                                            strokeWidth="1.5"
+                                            stroke-width="1.5"
                                             stroke="currentColor"
-                                            className="h-5 w-5"
+                                            class="size-8"
                                         >
                                             <path
-                                                strokeLinecap="round"
-                                                strokeLinejoin="round"
-                                                d="M8.25 9V5.25A2.25 2.25 0 0 1 10.5 3h6a2.25 2.25 0 0 1 2.25 2.25v13.5A2.25 2.25 0 0 1 16.5 21h-6a2.25 2.25 0 0 1-2.25-2.25V15m-3 0-3-3m0 0 3-3m-3 3H15"
+                                                stroke-linecap="round"
+                                                stroke-linejoin="round"
+                                                d="M17.982 18.725A7.488 7.488 0 0 0 12 15.75a7.488 7.488 0 0 0-5.982 2.975m11.963 0a9 9 0 1 0-11.963 0m11.963 0A8.966 8.966 0 0 1 12 21a8.966 8.966 0 0 1-5.982-2.275M15 9.75a3 3 0 1 1-6 0 3 3 0 0 1 6 0Z"
                                             />
                                         </svg>
                                     </button>
@@ -81,7 +81,7 @@ export default function Authenticated({ header, children }) {
                                         !showingNavigationDropdown
                                     )
                                 }
-                                className="p-2 rounded-md text-gray-400 dark:text-gray-500 hover:text-gray-500 dark:hover:text-gray-400 hover:bg-gray-200 dark:hover:bg-gray-700 transition duration-150"
+                                className="p-2 rounded-md text-gray-700 hover:text-blue-500 transition duration-150"
                             >
                                 <svg
                                     className="h-6 w-6"
@@ -111,7 +111,7 @@ export default function Authenticated({ header, children }) {
                 </div>
 
                 {showingNavigationDropdown && (
-                    <div className="sm:hidden bg-gray-100 dark:bg-gray-900">
+                    <div className="sm:hidden bg-gray-800 p-2">
                         <div className="pt-2 pb-3 space-y-1">
                             <ResponsiveNavLink
                                 href={route("sellers.index")}
@@ -130,7 +130,7 @@ export default function Authenticated({ header, children }) {
                 )}
             </nav>
 
-            <header className="bg-gradient-to-r from-red-400 to-red-600 dark:from-red-700 dark:to-red-900 shadow-xl">
+            <header className="bg-gradient-to-r from-blue-500 to-blue-600 shadow-xl">
                 <div className="max-w-7xl mx-auto py-6 px-4 sm:px-6 lg:px-8 text-white">
                     {header}
                 </div>

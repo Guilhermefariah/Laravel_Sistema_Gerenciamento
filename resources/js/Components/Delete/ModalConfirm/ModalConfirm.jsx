@@ -5,7 +5,7 @@ export const ModalConfirm = ({ isOpen, onClose, onConfirm, message }) => {
 
     return (
         <div className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50 z-50">
-            <div className="bg-gray-900 p-6 rounded-lg shadow-md w-1/3">
+            <div className="bg-gray-300 p-6 rounded-lg shadow-md w-1/3">
                 <div className="flex justify-center mb-4">
                     <svg
                         xmlns="http://www.w3.org/2000/svg"
@@ -22,7 +22,7 @@ export const ModalConfirm = ({ isOpen, onClose, onConfirm, message }) => {
                         />
                     </svg>
                 </div>
-                <p className="mb-4 text-gray-50 text-lg text-center">
+                <p className="mb-4 text-gray-700 text-lg text-center">
                     {message}
                 </p>
                 <div className="flex justify-center space-x-4">

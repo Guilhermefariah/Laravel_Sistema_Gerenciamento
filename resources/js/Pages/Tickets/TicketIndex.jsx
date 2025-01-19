@@ -14,16 +14,16 @@ export default function TicketIndex({ tickets }) {
     return (
         <AuthenticatedLayout
             header={
-                <h2 className="font-semibold text-xl text-gray-800 dark:text-gray-200 leading-tight">
+                <h2 className="font-semibold text-xl text-gray-50 leading-tight">
                     Tickets
                 </h2>
             }
         >
             <Head title="tickets" />
+
             <div className="py-4 max-w-7xl mx-auto sm:px-6 lg:px-8">
-                <div className="overflow-hidden bg-white shadow-lg sm:rounded-lg dark:bg-gray-800">
-                    <div className="flex justify-between items-center m-4 text-white">
-                        <h3 className="text-lg">Lista de tickets</h3>
+                <div className="overflow-hidden bg-gray-200 shadow-lg sm:rounded-lg">
+                    <div className="flex justify-end items-center m-4 text-gray-700">
                         <div className="flex space-x-4">
                             <Link href={route("tickets.create")}>
                                 <SuccessButton className="text-sm" />
@@ -32,29 +32,31 @@ export default function TicketIndex({ tickets }) {
                     </div>
                     <AlertMessage message={flash} />
 
-                    <table className="min-w-full divide-y divide-gray-200 dark:divide-gray-700">
-
+                    <table className="min-w-full divide-y divide-gray-100">
                         <TableHeadTicket />
-                        
-                        <tbody className="bg-white divide-y divide-gray-200 dark:bg-gray-800 dark:divide-gray-700">
+
+                        <tbody className="bg-gray-200 divide-y divide-gray-100 cursor-pointer">
                             {tickets.data.map((ticket) => (
-                                <tr key={ticket.id}>
-                                    <td className="px-6 py-2 text-sm text-gray-200 tracking-wider">
+                                <tr
+                                    key={ticket.id}
+                                    className="hover:bg-gray-100 transition duration-300"
+                                >
+                                    <td className="px-6 py-2 text-sm text-gray-800 hover:text-blue-600 tracking-wider">
                                         {ticket.id}
                                     </td>
-                                    <td className="px-6 py-2 text-sm text-gray-200 tracking-wider">
+                                    <td className="px-6 py-2 text-sm text-gray-800 hover:text-blue-600 tracking-wider">
                                         {ticket.subject}
                                     </td>
-                                    <td className="px-6 py-2 text-sm text-gray-200 tracking-wider">
+                                    <td className="px-6 py-2 text-sm text-gray-800 hover:text-blue-600 tracking-wider">
                                         {ticket.description}
                                     </td>
-                                    <td className="px-6 py-2 text-sm text-gray-200 tracking-wider">
+                                    <td className="px-6 py-2 text-sm text-gray-800 hover:text-blue-600 tracking-wider">
                                         {ticket.date_creation}
                                     </td>
-                                    <td className="px-6 py-2 text-sm text-gray-200 tracking-wider">
+                                    <td className="px-6 py-2 text-sm text-gray-800 hover:text-blue-600 tracking-wider">
                                         {ticket.status}
                                     </td>
-                                    <td className="px-6 py-2 text-sm text-gray-200 tracking-wider text-center">
+                                    <td className="px-6 py-2 text-sm text-gray-800 hover:text-blue-600 tracking-wider text-center">
                                         <Link
                                             href={route("tickets.show", {
                                                 ticket: ticket.id,

@@ -1,20 +1,20 @@
-import AuthenticatedLayout from "@/Layouts/AuthenticatedLayout";
-import PrimaryButton from "@/Components/Button/ViewButton";
-import SuccessButton from "@/Components/Button/SuccessButton";
-import WarningButton from "@/Components/Button/WarningButton";
-import { AlertMessage } from "@/Components/Delete/AlertMessage/AlertMessage";
-import { ConfirmDelete } from "@/Components/Delete/ConfirmDelete";
-import { Pagination } from "@/Components/Pagination/Pagination";
-import { Head, Link, usePage } from "@inertiajs/react";
-import TableHeadSeller from "@/Components/Table/TableSeller/TableHeadSeller";
+import AuthenticatedLayout from "@/Layouts/AuthenticatedLayout"
+import PrimaryButton from "@/Components/Button/ViewButton"
+import SuccessButton from "@/Components/Button/SuccessButton"
+import WarningButton from "@/Components/Button/WarningButton"
+import { AlertMessage } from "@/Components/Delete/AlertMessage/AlertMessage"
+import { ConfirmDelete } from "@/Components/Delete/ConfirmDelete"
+import { Pagination } from "@/Components/Pagination/Pagination"
+import { Head, Link, usePage } from "@inertiajs/react"
+import TableHeadSeller from "@/Components/Table/TableSeller/TableHeadSeller"
 
 export default function SellerIndex({ sellers }) {
-    const { flash } = usePage().props;
+    const { flash } = usePage().props
 
     return (
         <AuthenticatedLayout
             header={
-                <h2 className="font-semibold text-xl text-gray-800 dark:text-gray-200 leading-tight">
+                <h2 className="font-semibold text-xl text-gray-50 leading-tight">
                     Vendedores
                 </h2>
             }
@@ -22,45 +22,41 @@ export default function SellerIndex({ sellers }) {
             <Head title="vendedores" />
 
             <div className="py-4 max-w-7xl mx-auto sm:px-6 lg:px-8">
-                <div className="overflow-hidden bg-white shadow-lg sm:rounded-lg dark:bg-gray-800">
-                    <div className="flex justify-between items-center m-4 text-white">
-                        <h3 className="text-lg">Tabela de Vendedores</h3>
-                        <div className="flex space-x-4">
-                            <Link href={route("sellers.create")}>
-                                <SuccessButton className="text-sm" />
-                            </Link>
-                        </div>
+                <div className="overflow-hidden bg-gray-200 shadow-lg sm:rounded-lg">
+                    <div className="flex justify-end items-center m-4 text-gray-700">
+                        <Link href={route("sellers.create")}>
+                            <SuccessButton className="text-sm" />
+                        </Link>
                     </div>
 
-
-                    <table className="min-w-full divide-y divide-gray-200 dark:divide-gray-700">
+                    <table className="min-w-full divide-y divide-gray-100">
                         <TableHeadSeller />
 
-                        <tbody className="bg-white divide-y divide-gray-200 dark:bg-gray-800 dark:divide-gray-700">
+                        <tbody className="bg-gray-200 divide-y divide-gray-100 cursor-pointer">
                             {sellers.data.map((seller) => (
                                 <tr
                                     key={seller.id}
-                                    className="hover:bg-gray-100 dark:hover:bg-gray-700 transition duration-300"
+                                    className="hover:bg-gray-100 transition duration-300"
                                 >
-                                    <td className="px-6 py-2 text-sm text-gray-200 tracking-wider">
+                                    <td className="px-6 py-2 text-sm text-gray-800 hover:text-blue-600 tracking-wider">
                                         {seller.id}
                                     </td>
-                                    <td className="px-6 py-2 text-sm text-gray-200 tracking-wider">
+                                    <td className="px-6 py-2 text-sm text-gray-800 hover:text-blue-600 tracking-wider">
                                         {seller.name}
                                     </td>
-                                    <td className="px-6 py-2 text-sm text-gray-200 tracking-wider">
+                                    <td className="px-6 py-2 text-sm text-gray-800 hover:text-blue-600 tracking-wider">
                                         {seller.email}
                                     </td>
-                                    <td className="px-6 py-2 text-sm text-gray-200 tracking-wider">
+                                    <td className="px-6 py-2 text-sm text-gray-800 hover:text-blue-600 tracking-wider">
                                         {seller.phone}
                                     </td>
-                                    <td className="px-6 py-2 text-sm text-gray-200 tracking-wider">
+                                    <td className="px-6 py-2 text-sm text-gray-800 hover:text-blue-600 tracking-wider">
                                         {seller.amount_tickets}
                                     </td>
-                                    <td className="px-6 py-2 text-sm text-gray-200 tracking-wider">
+                                    <td className="px-6 py-2 text-sm text-gray-800 hover:text-blue-600 tracking-wider">
                                         {seller.status}
                                     </td>
-                                    <td className="px-6 py-2 text-sm text-center text-gray-200 tracking-wider">
+                                    <td className="px-6 py-2 text-sm text-center text-gray-800 hover:text-blue-600 tracking-wider">
                                         <Link
                                             href={route("sellers.show", {
                                                 id: seller.id,
@@ -91,7 +87,6 @@ export default function SellerIndex({ sellers }) {
                 </div>
             </div>
             <AlertMessage message={flash} />
-
         </AuthenticatedLayout>
-    );
+    )
 }

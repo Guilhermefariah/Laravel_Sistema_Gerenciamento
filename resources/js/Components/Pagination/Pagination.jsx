@@ -23,15 +23,15 @@ export const Pagination = ({ links, currentPage }) => {
                             as="button"
                             className={`px-6 py-1 text-lg font-medium border transition-all rounded-lg ${
                                 link.active
-                                    ? "bg-gray-700 text-white cursor-default"
-                                    : "bg-gray-500 text-white hover:bg-gray-700"
+                                    ? "bg-gray-300 text-gray-50 cursor-default"
+                                    : "bg-gray-400 text-gray-50 hover:bg-gray-500"
                             } ${!link.url && "cursor-not-allowed opacity-50"}`}
                             onClick={(e) => !link.url && e.preventDefault()}
                         >
                             {link.label === "&laquo; Previous"
-                                ? "←"
+                                ? "〈"
                                 : link.label === "Next &raquo;"
-                                ? "→"
+                                ? "〉"
                                 : link.label}
                         </Link>
                     </motion.div>

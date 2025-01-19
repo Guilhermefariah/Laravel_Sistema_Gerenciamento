@@ -8,7 +8,7 @@ export default function InfoButton({
         <button
             {...props}
             className={
-                `inline-flex items-center px-4 py-2 bg-none border border-transparent rounded-md font-semibold text-xs text-white uppercase tracking-widest hover:bg-blue-600 active:bg-blue-700 transition ease-in-out duration-150 ${
+                `inline-flex items-center px-4 py-2 bg-none border border-transparent rounded-md font-semibold text-xs text-rose-600 hover:text-white uppercase tracking-widest hover:bg-rose-600 active:bg-rose-700 transition ease-in-out duration-150 ${
                     disabled && "opacity-25"
                 } ` + className
             }

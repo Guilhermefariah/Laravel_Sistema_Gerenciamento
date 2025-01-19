@@ -11,17 +11,16 @@ export default function SellerShow({ seller }) {
     return (
         <AuthenticatedLayout
             header={
-                <h2 className="font-semibold text-xl text-gray-800 dark:text-gray-200 leading-tight">
+                <h2 className="font-semibold text-xl text-gray-50 leading-tight">
                     Detalhes do Vendedor
                 </h2>
             }
         >
-            <Head title={`Vendedores - ${seller.name}`} />
+            <Head title="Detalhes do Vendedor" />
 
             <div className="py-4 max-w-7xl mx-auto sm:px-6 lg:px-8">
-                <div className="overflow-hidden bg-white shadow-lg sm:rounded-lg dark:bg-gray-800">
-                    <div className="flex justify-between items-center m-4 text-white">
-                        <h3 className="text-lg">Detalhes</h3>
+                <div className="overflow-hidden bg-gray-200 shadow-lg sm:rounded-lg">
+                    <div className="flex justify-end items-center m-4 text-gray-700">
                         <div className="flex space-x-1">
                             <Link href={route("sellers.index")}>
                                 <InfoButton className="text-sm" />
@@ -31,7 +30,7 @@ export default function SellerShow({ seller }) {
                                     seller: seller.id,
                                 })}
                             >
-                                <WarningButton className="text-sm" />
+                                <WarningButton />
                             </Link>
                             <ConfirmDelete
                                 id={seller.id}
@@ -42,52 +41,52 @@ export default function SellerShow({ seller }) {
 
                     <AlertMessage message={flash} />
 
-                    <div className="bg-white text-sm dark:bg-gray-800 p-4 shadow-md">
-                        <div className="mb-4">
-                            <p className="text-md font-semibold text-gray-400 dark:text-gray-200">
+                    <div className="bg-gray-200 text-sm p-6 shadow-lg rounded-lg">
+                        <div className="mb-6 divide-y divide-gray-100 pb-4">
+                            <h1 className="text-lg font-semibold text-gray-700"> 
                                 ID
-                            </p>
-                            <p className="text-gray-600 dark:text-gray-400">
+                            </h1>
+                            <p className="text-gray-700">
                                 {seller.id}
                             </p>
                         </div>
-                        <div className="mb-4">
-                            <p className="text-md font-semibold text-gray-400 dark:text-gray-200">
+                        <div className="mb-6 divide-y divide-gray-100 pb-4">
+                            <h1 className="text-lg font-semibold text-gray-700">
                                 Nome
-                            </p>
-                            <p className="text-gray-600 dark:text-gray-400">
+                            </h1>
+                            <p className="text-gray-700">
                                 {seller.name}
                             </p>
                         </div>
-                        <div className="mb-4">
-                            <p className="text-md font-semibold text-gray-400 dark:text-gray-200">
+                        <div className="mb-6 divide-y divide-gray-100 pb-4">
+                            <h1 className="text-lg font-semibold text-gray-700">
                                 E-mail
-                            </p>
-                            <p className="text-gray-600 dark:text-gray-400">
+                            </h1>
+                            <p className="text-gray-700">
                                 {seller.email}
                             </p>
                         </div>
-                        <div className="mb-4">
-                            <p className="text-md font-semibold text-gray-400 dark:text-gray-200">
+                        <div className="mb-6 divide-y divide-gray-100 pb-4">
+                            <h1 className="text-lg font-semibold text-gray-700">
                                 Telefone
-                            </p>
-                            <p className="text-gray-600 dark:text-gray-400">
+                            </h1>
+                            <p className="text-gray-700">
                                 {seller.phone}
                             </p>
                         </div>
-                        <div className="mb-4">
-                            <p className="text-md font-semibold text-gray-400 dark:text-gray-200">
+                        <div className="mb-6 divide-y divide-gray-100 pb-4">
+                            <h1 className="text-lg font-semibold text-gray-700">
                                 Quantidade de tickets
-                            </p>
-                            <p className="text-gray-600 dark:text-gray-400">
+                            </h1>
+                            <p className="text-gray-700">
                                 {seller.amount_tickets}
                             </p>
                         </div>
-                        <div className="mb-4">
-                            <p className="text-md font-semibold text-gray-400 dark:text-gray-200">
+                        <div className="mb-0 divide-y divide-gray-100">
+                            <h1 className="text-lg font-semibold text-gray-700">
                                 Status
-                            </p>
-                            <p className="text-gray-600 dark:text-gray-400">
+                            </h1>
+                            <p className="text-gray-700">
                                 {seller.status}
                             </p>
                         </div>

@@ -8,7 +8,7 @@ export default function SuccessButton({
         <button
             {...props}
             className={
-                `inline-flex items-center px-4 py-2 bg-none border border-transparent rounded-md font-semibold text-x text-indigo-600 hover:text-white uppercase tracking-widest hover:bg-indigo-600 active:bg-indigo-700 transition ease-in-out duration-150 ${
+                `inline-flex items-center px-4 py-2 bg-none border border-transparent rounded-md font-semibold text-x text-indigo-600 hover:text-white uppercase tracking-widest hover:bg-indigo-800 active:bg-indigo-700 transition ease-in-out duration-150 ${
                     disabled && "opacity-25"
                 } ` + className
             }

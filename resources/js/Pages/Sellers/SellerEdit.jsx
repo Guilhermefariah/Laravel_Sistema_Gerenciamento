@@ -22,20 +22,17 @@ export default function SellerEdit({ seller }) {
 
     return (
         <AuthenticatedLayout
-        header={
-            <h2 className="font-semibold text-xl text-gray-800 dark:text-gray-200 leading-tight">
-                Editar Vendedor
-            </h2>
-        }
+            header={
+                <h2 className="font-semibold text-xl text-gray-50 leading-tight">
+                    Editar Vendedor
+                </h2>
+            }
         >
             <Head title="Editar vendedor" />
 
             <div className="py-6 max-w-4xl mx-auto sm:px-6 lg:px-8">
-                <div className="bg-white dark:bg-gray-800 shadow-md rounded-lg p-6">
-                    <div className="flex justify-between items-center mb-6">
-                        <h3 className="text-lg font-bold text-gray-800 dark:text-gray-200">
-                            Editar Cadastro
-                        </h3>
+                <div className="bg-gray-200 shadow-md rounded-lg p-6">
+                    <div className="flex justify-end items-center mb-6">
                         <div className="flex space-x-1">
                             <Link href={route("sellers.index")}>
                                 <InfoButton className="text-sm" />
@@ -54,7 +51,7 @@ export default function SellerEdit({ seller }) {
                         <div className="mb-4">
                             <label
                                 htmlFor="name"
-                                className="block text-sm font-medium text-gray-700 dark:text-gray-300"
+                                className="block text-lg text-gray-700"
                             >
                                 Nome
                             </label>
@@ -66,7 +63,7 @@ export default function SellerEdit({ seller }) {
                                 onChange={(e) =>
                                     setData("name", e.target.value)
                                 }
-                                className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500 sm:text-sm dark:bg-gray-700 dark:border-gray-600 dark:text-gray-300"
+                                className="mt-1 block w-full rounded-md border-none shadow-sm focus:ring-blue-600 sm:text-sm text-gray-700"
                             />
                             {errors.name && (
                                 <span className="text-red-500">
@@ -78,7 +75,7 @@ export default function SellerEdit({ seller }) {
                         <div className="mb-4">
                             <label
                                 htmlFor="email"
-                                className="block text-sm font-medium text-gray-700 dark:text-gray-300"
+                                className="block text-lg text-gray-700"
                             >
                                 E-mail
                             </label>
@@ -90,7 +87,7 @@ export default function SellerEdit({ seller }) {
                                 onChange={(e) =>
                                     setData("email", e.target.value)
                                 }
-                                className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500 sm:text-sm dark:bg-gray-700 dark:border-gray-600 dark:text-gray-300"
+                                className="mt-1 block w-full rounded-md border-none shadow-sm focus:ring-blue-600 sm:text-sm text-gray-700"
                             />
                             {errors.email && (
                                 <span className="text-red-500">
@@ -102,7 +99,7 @@ export default function SellerEdit({ seller }) {
                         <div className="mb-4">
                             <label
                                 htmlFor="phone"
-                                className="block text-sm font-medium text-gray-700 dark:text-gray-300"
+                                className="block text-lg text-gray-700"
                             >
                                 Telefone
                             </label>
@@ -114,7 +111,7 @@ export default function SellerEdit({ seller }) {
                                 onChange={(e) =>
                                     setData("phone", e.target.value)
                                 }
-                                className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500 sm:text-sm dark:bg-gray-700 dark:border-gray-600 dark:text-gray-300"
+                                className="mt-1 block w-full rounded-md border-none shadow-sm focus:ring-blue-600 sm:text-sm text-gray-700"
                             />
                             {errors.phone && (
                                 <span className="text-red-500">
@@ -126,7 +123,7 @@ export default function SellerEdit({ seller }) {
                         <div className="mb-4">
                             <label
                                 htmlFor="status"
-                                className="block text-sm font-medium text-gray-700 dark:text-gray-300"
+                                className="block text-lg text-gray-700"
                             >
                                 Status
                             </label>
@@ -136,7 +133,7 @@ export default function SellerEdit({ seller }) {
                                 onChange={(e) =>
                                     setData("status", e.target.value)
                                 }
-                                className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500 sm:text-sm dark:bg-gray-700 dark:border-gray-600 dark:text-gray-300"
+                                className="mt-1 block w-full rounded-md border-none shadow-sm focus:ring-blue-600 sm:text-sm text-lg text-gray-700"
                             >
                                 <option value="Ativado">Ativado</option>
                                 <option value="Inativo">Inativo</option>
@@ -151,7 +148,7 @@ export default function SellerEdit({ seller }) {
                         <div className="mb-4">
                             <label
                                 htmlFor="amount_tickets"
-                                className="block text-sm font-medium text-gray-700 dark:text-gray-300"
+                                className="block text-lg text-gray-700"
                             >
                                 Quantidade de tickets
                             </label>
@@ -161,7 +158,7 @@ export default function SellerEdit({ seller }) {
                                 onChange={(e) =>
                                     setData("amount_tickets", e.target.value)
                                 }
-                                className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500 sm:text-sm dark:bg-gray-700 dark:border-gray-600 dark:text-gray-300"
+                                className="mt-1 block w-full rounded-md border-none shadow-sm focus:ring-blue-600 sm:text-sm text-lg text-gray-700"
                             >
                                 <option value="Em aberto">Em aberto</option>
                                 <option value="Em andamento">

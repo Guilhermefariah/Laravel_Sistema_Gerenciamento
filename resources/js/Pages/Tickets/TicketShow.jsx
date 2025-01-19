@@ -11,62 +11,64 @@ export default function TicketShow({ ticket }) {
     return (
         <AuthenticatedLayout
             header={
-                <h2 className="font-semibold text-xl text-gray-800 dark:text-gray-200 leading-tight">
+                <h2 className="font-semibold text-xl text-gray-50 leading-tight">
                     Detalhes do ticket
                 </h2>
             }
         >
             <Head title="ticket Details" />
 
-            <div className="py-4 max-w-7xl max-auto sm:px-6 lg:px-8">
-                <div className="overflow-hidden bg-white shadow-lg sm:rounded-lg dark:bg-gray-800">
-                    <div className="flex justify-between items-center m-4 text-white">
-                        <h3 className="text-lg">Detalhes do ticket</h3>
+            <div className="py-4 max-w-7xl mx-auto sm:px-6 lg:px-8">
+                <div className="overflow-hidden bg-gray-200 shadow-lg sm:rounded-lg">
+                    <div className="flex justify-end items-center m-4 text-gray-700">
                         <div className="flex space-x-1">
                             <Link href={route("tickets.index")}>
                                 <InfoButton className="text-sm" />
                             </Link>
-                            <Link href={route("tickets.edit", { ticket: ticket.id })}>
+                            <Link
+                                href={route("tickets.edit", {
+                                    ticket: ticket.id,
+                                })}
+                            >
                                 <WarningButton className="text-sm" />
                             </Link>
-                            <ConfirmDelete id={ticket.id} routeName="tickets.destroy" />
+                            <ConfirmDelete
+                                id={ticket.id}
+                                routeName="tickets.destroy"
+                            />
                         </div>
                     </div>
 
                     <AlertMessage message={flash} />
 
-                    <div className="bg-white text-sm dark:bg-gray-800 p-4 shadow-md">
-                        <div className="mb-4">
-                            <p className="text-md font-semibold text-gray-400 dark:text-gray-200">
+                    <div className="bg-gray-200 text-sm p-6 shadow-lg rounded-lg">
+                        <div className="mb-6 divide-y divide-gray-100 pb-4">
+                            <h1 className="text-lg font-semibold text-gray-700">
                                 Assunto
-                            </p>
-                            <p className="text-gray-600 dark:text-gray-400">
-                                {ticket.subject}
-                            </p>
+                            </h1>
+                            <p className="text-gray-700">{ticket.subject}</p>
                         </div>
-                        <div className="mb-4">
-                            <p className="text-md font-semibold text-gray-400 dark:text-gray-200">
+                        <div className="mb-6 divide-y divide-gray-100 pb-4">
+                            <h1 className="text-lg font-semibold text-gray-700">
                                 Descrição
-                            </p>
-                            <p className="text-gray-600 dark:text-gray-400">
+                            </h1>
+                            <p className="text-gray-700">
                                 {ticket.description}
                             </p>
                         </div>
-                        <div className="mb-4">
-                            <p className="text-md font-semibold text-gray-400 dark:text-gray-200">
+                        <div className="mb-6 divide-y divide-gray-100 pb-4">
+                            <h1 className="text-lg font-semibold text-gray-700">
                                 Data de crianção
-                            </p>
-                            <p className="text-gray-600 dark:text-gray-400">
+                            </h1>
+                            <p className="text-gray-700">
                                 {ticket.date_creation}
                             </p>
                         </div>
-                        <div className="mb-4">
-                            <p className="text-md font-semibold text-gray-400 dark:text-gray-200">
+                        <div className="mb-6 divide-y divide-gray-100 pb-4">
+                            <h1 className="text-lg font-semibold text-gray-700">
                                 Status
-                            </p>
-                            <p className="text-gray-600 dark:text-gray-400">
-                                {ticket.status}
-                            </p>
+                            </h1>
+                            <p className="text-gray-700">{ticket.status}</p>
                         </div>
                     </div>
                 </div>

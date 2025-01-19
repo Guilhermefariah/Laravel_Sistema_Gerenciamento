@@ -20,19 +20,16 @@ export default function SellerCreate() {
     return (
         <AuthenticatedLayout
             header={
-                <h2 className="font-semibold text-xl text-gray-800 dark:text-gray-200 leading-tight">
+                <h2 className="font-semibold text-xl text-gray-50 leading-tight">
                     Novo Vendedor
                 </h2>
             }
         >
             <Head title="Create Seller" />
 
-            <div className="py-6 max-w-4xl mx-auto sm:px-6 lg:px-8">
-                <div className="bg-white dark:bg-gray-800 shadow-md rounded-lg p-6">
-                    <div className="flex justify-between items-center mb-6">
-                        <h3 className="text-lg font-bold text-gray-800 dark:text-gray-200">
-                            Novo Vendedor
-                        </h3>
+            <div className="py-4 max-w-7xl mx-auto sm:px-6 lg:px-8">
+                <div className="bg-gray-200 shadow-md rounded-lg p-6">
+                    <div className="flex justify-end items-center mb-6">
                         <Link href={route("sellers.index")}>
                             <InfoButton className="text-sm" />
                         </Link>
@@ -42,8 +39,7 @@ export default function SellerCreate() {
                         <div>
                             <label
                                 htmlFor="name"
-                                className="block text-sm font-medium text-gray-700 dark:text-gray-300"
-                            >
+                                className="block text-lg text-gray-700"                            >
                                 Nome
                             </label>
                             <input
@@ -54,7 +50,7 @@ export default function SellerCreate() {
                                 onChange={(e) =>
                                     setData("name", e.target.value)
                                 }
-                                className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500 sm:text-sm dark:bg-gray-700 dark:border-gray-600 dark:text-gray-300"
+                                className="mt-1 block w-full rounded-md border-none shadow-sm focus:ring-blue-600 sm:text-sm text-gray-700"
                             />
                             {errors.name && (
                                 <span className="text-red-500 text-sm">
@@ -66,8 +62,7 @@ export default function SellerCreate() {
                         <div>
                             <label
                                 htmlFor="email"
-                                className="block text-sm font-medium text-gray-700 dark:text-gray-200"
-                            >
+                                className="block text-lg text-gray-700"                            >
                                 E-Mail
                             </label>
                             <input
@@ -78,7 +73,7 @@ export default function SellerCreate() {
                                 onChange={(e) =>
                                     setData("email", e.target.value)
                                 }
-                                className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500 sm:text-sm dark:bg-gray-700 dark:border-gray-600 dark:text-gray-200"
+                                className="mt-1 block w-full rounded-md border-none shadow-sm focus:ring-blue-600 sm:text-sm text-gray-700"
                             />
                             {errors.email && (
                                 <span className="text-red-500 text-sm">
@@ -90,8 +85,7 @@ export default function SellerCreate() {
                         <div>
                             <label
                                 htmlFor="phone"
-                                className="block text-sm font-medium text-gray-700 dark:text-gray-200"
-                            >
+                                className="block text-lg text-gray-700"                            >
                                 Telefone
                             </label>
                             <input
@@ -102,7 +96,7 @@ export default function SellerCreate() {
                                 onChange={(e) =>
                                     setData("phone", e.target.value)
                                 }
-                                className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500 sm:text-sm dark:bg-gray-700 dark:border-gray-600 dark:text-gray-300"
+                                className="mt-1 block w-full rounded-md border-none shadow-sm focus:ring-blue-600 sm:text-sm text-gray-700"
                             />
                             {errors.phone && (
                                 <span className="text-red-500 text-sm">
@@ -114,8 +108,7 @@ export default function SellerCreate() {
                         <div>
                             <label
                                 htmlFor="status"
-                                className="block text-sm font-medium text-gray-700 dark:text-gray-200"
-                            >
+                                className="block text-lg text-gray-700"                            >
                                 Status
                             </label>
                             <select
@@ -126,7 +119,7 @@ export default function SellerCreate() {
                                 onChange={(e) =>
                                     setData("status", e.target.value)
                                 }
-                                className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500 sm:text-sm dark:bg-gray-700 dark:border-gray-600 dark:text-gray-300"
+                                className="mt-1 block w-full rounded-md border-none shadow-sm focus:ring-blue-600 sm:text-sm text-gray-700"
                             >
                                 <option value="Ativo">Ativo</option>
                                 <option value="Inativo">Inativo</option>
@@ -141,8 +134,7 @@ export default function SellerCreate() {
                         <div>
                             <label
                                 htmlFor="amount_tickets"
-                                className="block text-sm font-medium text-gray-700 dark:text-gray-200"
-                            >
+                                className="block text-lg text-gray-700"                            >
                                 Quantidade de Tickets
                             </label>
                             <select
@@ -154,7 +146,7 @@ export default function SellerCreate() {
                                 onChange={(e) =>
                                     setData("amount_tickets", e.target.value)
                                 }
-                                className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500 sm:text-sm dark:bg-gray-700 dark:border-gray-600 dark:text-gray-300"
+                                className="mt-1 block w-full rounded-md border-none shadow-sm focus:ring-blue-600 sm:text-sm text-gray-700"
                             >
                                 <option value="Em Aberto"> Em Aberto </option>
                                 <option value="Em Andamento">

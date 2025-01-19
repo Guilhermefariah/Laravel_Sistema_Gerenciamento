@@ -2,9 +2,9 @@ import React from "react";
 
 export default function TableHeadSeller() {
     return (
-        <thead className="bg-gray-50 dark:bg-gradient-to-t dark:bg-black">
+        <thead className="bg-gray-100 max-w-2 cursor-pointer">
             <tr>
-                <th className="px-6 py-3 text-left text-sm font-medium text-gray-200 hover:text-red-800 tracking-wider">
+                <th className="px-6 py-3 text-left text-sm font-medium text-blue-600 hover:text-gray-700 tracking-wider hover:bg-gray-50 hover:rounded-lg">
                     <svg
                         xmlns="http://www.w3.org/2000/svg"
                         fill="none"
@@ -20,7 +20,7 @@ export default function TableHeadSeller() {
                         />
                     </svg>
                 </th>
-                <th className="px-10 py-3 text-left text-sm font-medium text-gray-200 hover:text-red-800 tracking-wider">
+                <th className="px-10 py-3 text-left text-sm font-medium text-blue-600 hover:text-gray-700 tracking-wider hover:bg-gray-50 hover:rounded-lg">
                     <svg
                         xmlns="http://www.w3.org/2000/svg"
                         fill="none"
@@ -36,7 +36,7 @@ export default function TableHeadSeller() {
                         />
                     </svg>
                 </th>
-                <th className="px-20 py-3 text-left text-sm font-medium text-gray-200 hover:text-red-800 tracking-wider">
+                <th className="px-20 py-3 text-left text-sm font-medium text-blue-600 hover:text-gray-700 tracking-wider hover:bg-gray-50 hover:rounded-lg">
                     <svg
                         xmlns="http://www.w3.org/2000/svg"
                         fill="none"
@@ -52,7 +52,7 @@ export default function TableHeadSeller() {
                         />
                     </svg>
                 </th>
-                <th className="px-14 py-3 text-left text-sm font-medium text-gray-200 hover:text-red-800 tracking-wider">
+                <th className="px-14 py-3 text-left text-sm font-medium text-blue-600 hover:text-gray-700 tracking-wider hover:bg-gray-50 hover:rounded-lg">
                     <svg
                         xmlns="http://www.w3.org/2000/svg"
                         fill="none"
@@ -68,7 +68,7 @@ export default function TableHeadSeller() {
                         />
                     </svg>
                 </th>
-                <th className="px-10 py-3 text-left text-sm font-medium text-gray-200 hover:text-red-800 tracking-wider">
+                <th className="px-10 py-3 text-left text-sm font-medium text-blue-600 hover:text-gray-700 tracking-wider hover:bg-gray-50 hover:rounded-lg">
                     <svg
                         xmlns="http://www.w3.org/2000/svg"
                         fill="none"
@@ -84,7 +84,7 @@ export default function TableHeadSeller() {
                         />
                     </svg>
                 </th>
-                <th className="px-6 py-3 text-left text-sm font-medium text-gray-200 hover:text-red-800 tracking-wider">
+                <th className="px-6 py-3 text-left text-sm font-medium text-blue-600 hover:text-gray-700 tracking-wider hover:bg-gray-50 hover:rounded-lg">
                     <svg
                         xmlns="http://www.w3.org/2000/svg"
                         fill="none"
@@ -100,7 +100,7 @@ export default function TableHeadSeller() {
                         />
                     </svg>
                 </th>
-                <th className="flex px-6 py-3 text-center justify-center text-sm font-medium text-gray-200 hover:text-red-800 tracking-wider">
+                <th className="flex px-6 py-3 text-center justify-center text-sm font-medium text-blue-600 hover:text-gray-700 tracking-wider hover:bg-gray-50 rounded-lg">
                     <svg
                         xmlns="http://www.w3.org/2000/svg"
                         fill="none"
@@ -119,7 +119,6 @@ export default function TableHeadSeller() {
                             stroke-linejoin="round"
                             d="M15 12a3 3 0 1 1-6 0 3 3 0 0 1 6 0Z"
                         />
-                        
                     </svg>
                 </th>
             </tr>

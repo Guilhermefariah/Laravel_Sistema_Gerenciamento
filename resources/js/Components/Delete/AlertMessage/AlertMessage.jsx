@@ -9,20 +9,20 @@ export const AlertMessage = ({ message }) => {
 
     const alertStyles = isSuccess
         ? {
-              bg: "bg-green-500 dark:bg-green-800",
-              text: "text-green-800 dark:text-gray-200",
+              bg: "bg-blue-600",
+              text: "text-gray-50",
               content: message.success,
           }
         : {
-              bg: "bg-red-500 dark:bg-red-800",
-              text: "text-red-800 dark:text-gray-200",
+              bg: "bg-red-600",
+              text: "text-red-50",
               content: message.error,
           };
 
     const [progress, setProgress] = useState(100);
 
     useEffect(() => {
-        const duration = 2000;
+        const duration = 1000;
         const interval = 50;
         const step = (interval / duration) * 100;
 
@@ -56,7 +56,7 @@ export const AlertMessage = ({ message }) => {
                         animate={{ width: `${progress}%` }}
                         transition={{ duration: 0 }}
                         className={`h-full ${
-                            isSuccess ? "bg-green-700" : "bg-red-700"
+                            isSuccess ? "bg-gray-400" : "bg-red-700"
                         }`}
                     />
                 </div>
