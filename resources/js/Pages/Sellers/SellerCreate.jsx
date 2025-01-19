@@ -39,7 +39,8 @@ export default function SellerCreate() {
                         <div>
                             <label
                                 htmlFor="name"
-                                className="block text-lg text-gray-700"                            >
+                                className="block text-lg text-gray-700"
+                            >
                                 Nome
                             </label>
                             <input
@@ -62,7 +63,8 @@ export default function SellerCreate() {
                         <div>
                             <label
                                 htmlFor="email"
-                                className="block text-lg text-gray-700"                            >
+                                className="block text-lg text-gray-700"
+                            >
                                 E-Mail
                             </label>
                             <input
@@ -85,7 +87,8 @@ export default function SellerCreate() {
                         <div>
                             <label
                                 htmlFor="phone"
-                                className="block text-lg text-gray-700"                            >
+                                className="block text-lg text-gray-700"
+                            >
                                 Telefone
                             </label>
                             <input
@@ -108,7 +111,8 @@ export default function SellerCreate() {
                         <div>
                             <label
                                 htmlFor="status"
-                                className="block text-lg text-gray-700"                            >
+                                className="block text-lg text-gray-700"
+                            >
                                 Status
                             </label>
                             <select
@@ -134,7 +138,8 @@ export default function SellerCreate() {
                         <div>
                             <label
                                 htmlFor="amount_tickets"
-                                className="block text-lg text-gray-700"                            >
+                                className="block text-lg text-gray-700"
+                            >
                                 Quantidade de Tickets
                             </label>
                             <select

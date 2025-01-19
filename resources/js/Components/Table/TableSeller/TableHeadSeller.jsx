@@ -21,7 +21,7 @@ export default function TableHeadSeller() {
                     <MdEmail className="size-6" />
                 </th>
                 <th className="px-14 py-3 text-left text-sm font-medium text-blue-600 hover:text-yellow-400 tracking-wider hover:bg-gray-50 hover:rounded-lg">
-                    <FaPhoneVolume className="size-6" />
+                    <FaPhoneVolume className="size-5" />
                 </th>
                 <th className="px-10 py-3 text-left text-sm font-medium text-blue-600 hover:text-yellow-400 tracking-wider hover:bg-gray-50 hover:rounded-lg">
                     <LuTicketsPlane className="size-6" />
