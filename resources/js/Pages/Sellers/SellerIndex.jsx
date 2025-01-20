@@ -7,6 +7,7 @@ import { ConfirmDelete } from "@/Components/Delete/ConfirmDelete";
 import { Pagination } from "@/Components/Pagination/Pagination";
 import { Head, Link, usePage } from "@inertiajs/react";
 import TableHeadSeller from "@/Components/Table/TableSeller/TableHeadSeller";
+import Chatbot from "@/Components/ChatBot/ChatBot";
 
 export default function SellerIndex({ sellers }) {
     const { flash } = usePage().props;
@@ -89,6 +90,7 @@ export default function SellerIndex({ sellers }) {
                     />
                 </div>
             </div>
+            <Chatbot/>
         </AuthenticatedLayout>
     );
 }
