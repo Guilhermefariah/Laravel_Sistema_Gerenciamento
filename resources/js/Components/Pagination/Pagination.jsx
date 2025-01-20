@@ -24,7 +24,7 @@ export const Pagination = ({ links, currentPage }) => {
                             className={`px-6 py-1 text-lg font-medium border transition-all rounded-lg ${
                                 link.active
                                     ? "bg-gray-300 text-gray-50 cursor-default"
-                                    : "bg-gray-400 text-gray-50 hover:bg-gray-500"
+                                    : "bg-blue-600 text-gray-50 hover:bg-blue-800"
                             } ${!link.url && "cursor-not-allowed opacity-50"}`}
                             onClick={(e) => !link.url && e.preventDefault()}
                         >

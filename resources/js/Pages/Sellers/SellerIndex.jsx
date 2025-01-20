@@ -31,14 +31,14 @@ export default function SellerIndex({ sellers }) {
                     <AlertMessage message={flash} />
 
                     <div className="relative overflow-x-auto sm:rounded-lg">
-                        <table className="min-w-full divide-y divide-gray-100">
+                        <table className="min-w-full divide-y divide-blue-200">
                             <TableHeadSeller />
 
                             <tbody className="bg-gray-100 divide-y divide-gray-100 cursor-pointer">
                                 {sellers.data.map((seller) => (
                                     <tr
                                         key={seller.id}
-                                        className="hover:bg-gray-100 transition duration-300"
+                                        className="hover:bg-gradient-to-t from-gray-100 to-gray-200 transition duration-300"
                                     >
                                         <td className="px-6 py-2 text-sm text-gray-800 hover:text-blue-600 tracking-wider">
                                             {seller.id}

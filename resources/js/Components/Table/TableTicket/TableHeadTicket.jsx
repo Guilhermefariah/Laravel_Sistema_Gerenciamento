@@ -7,7 +7,7 @@ import { FiSettings } from "react-icons/fi";
 
 export default function TableHeadTicket() {
     return (
-        <thead className="bg-gray-200 max-w-2 cursor-pointer">
+        <thead className="bg-gray-100 max-w-2 cursor-pointer">
             <tr>
                 <th className="px-6 py-3 text-left text-sm font-medium text-blue-600 hover:text-gray-700 tracking-wider hover:bg-gray-50 hover:rounded-lg">
                     <FaRegIdCard className="size-6" />

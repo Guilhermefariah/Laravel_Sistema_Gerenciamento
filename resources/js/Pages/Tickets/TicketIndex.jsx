@@ -22,7 +22,7 @@ export default function TicketIndex({ tickets }) {
             <Head title="tickets" />
 
             <div className="py-4 max-w-7xl mx-auto sm:px-6 lg:px-8">
-                <div className="overflow-hidden bg-gray-200 shadow-lg sm:rounded-lg">
+                <div className="overflow-hidden bg-gray-100 shadow-lg sm:rounded-lg">
                     <div className="flex justify-end items-center m-4 text-gray-700">
                         <Link href={route("tickets.create")}>
                             <SuccessButton className="text-sm" />
@@ -30,15 +30,15 @@ export default function TicketIndex({ tickets }) {
                     </div>
                     <AlertMessage message={flash} />
 
-                    <div className="relative overflow-x-auto shadow-md sm:rounded-lg">
-                        <table className="min-w-full divide-y divide-gray-100">
+                    <div className="relative overflow-x-auto sm:rounded-lg">
+                        <table className="min-w-full divide-y divide-blue-200">
                             <TableHeadTicket />
 
-                            <tbody className="bg-gray-200 divide-y divide-gray-100 cursor-pointer">
+                            <tbody className="bg-gray-100 divide-y divide-gray-100 cursor-pointer">
                                 {tickets.data.map((ticket) => (
                                     <tr
                                         key={ticket.id}
-                                        className="hover:bg-gray-100 transition duration-300"
+                                        className="hover:bg-gradient-to-t from-gray-100 to-gray-200 transition duration-300"
                                     >
                                         <td className="px-6 py-2 text-sm text-gray-800 hover:text-blue-600 tracking-wider">
                                             {ticket.id}
