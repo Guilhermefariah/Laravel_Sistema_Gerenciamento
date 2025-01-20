@@ -30,7 +30,12 @@ const Trigger = ({ children }) => {
     );
 };
 
-const Content = ({ align = 'right', width = '48', contentClasses = 'py-2 px-2 bg-white dark:bg-gray-700', children }) => {
+const Content = ({
+    align = 'right',
+    width = '48',
+    contentClasses = 'py-2 px-2 bg-white dark:bg-blue-50',
+    children,
+}) => {
     const { open, setOpen } = useContext(DropDownContext);
 
     let alignmentClasses = 'origin-top';
@@ -63,7 +68,9 @@ const Content = ({ align = 'right', width = '48', contentClasses = 'py-2 px-2 bg
                     className={`absolute z-50 mt-2 rounded-md shadow-lg ${alignmentClasses} ${widthClasses}`}
                     onClick={() => setOpen(false)}
                 >
-                    <div className={`rounded-md ring-1 ring-black ring-opacity-5 ` + contentClasses}>{children}</div>
+                    <div className={`rounded-md ring-1 ring-blue-500 ring-opacity-10 ` + contentClasses}>
+                        {children}
+                    </div>
                 </div>
             </Transition>
         </>
@@ -75,7 +82,7 @@ const DropdownLink = ({ className = '', children, ...props }) => {
         <Link
             {...props}
             className={
-                'w-full flex items-start ps-3 pe-4 py-2 border-l-4 border-transparent bg-gray-700 focus:bg-gray-700 text-gray-50 hover:text-gray-50 hover:bg-gray-500 focus:outline-none transition duration-150 hover:border-l-4 hover:border-blue-600 rounded-lg' +
+                'w-full flex items-start ps-3 pe-4 py-2 border-l-4 border-transparent bg-white text-blue-600 hover:text-white hover:bg-blue-500 focus:outline-none transition duration-150 hover:border-l-4 hover:border-blue-700 rounded-lg' +
                 className
             }
         >
