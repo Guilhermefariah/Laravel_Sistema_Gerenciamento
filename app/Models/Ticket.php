@@ -15,9 +15,4 @@ class Ticket extends Model
         'date_creation',
         'status',
     ];
-
-    public function seller()
-    {
-        return $this->belongsTo(Seller::class);
-    }
 }
