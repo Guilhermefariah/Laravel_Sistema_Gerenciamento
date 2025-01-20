@@ -9,7 +9,7 @@ export const AlertMessage = ({ message }) => {
 
     const alertStyles = isSuccess
         ? {
-              bg: "bg-blue-600",
+              bg: "bg-green-600",
               text: "text-gray-50",
               content: message.success,
           }
@@ -47,7 +47,7 @@ export const AlertMessage = ({ message }) => {
                 animate={{ opacity: 1, y: 0 }}
                 exit={{ opacity: 0, y: 50 }}
                 transition={{ duration: 0.5 }}
-                className={`fixed bottom-5 right-3.5 transform -translate-x-1/2 px-4 py-2 rounded-md shadow-lg ${alertStyles.bg} ${alertStyles.text}`}
+                className={`fixed top-8 right-3 transform -translate-x-1/2 px-4 py-2 rounded-md shadow-lg ${alertStyles.bg} ${alertStyles.text}`}
             >
                 {alertStyles.content}
                 <div className="w-full h-1 bg-gray-200 mt-2 rounded overflow-hidden">
