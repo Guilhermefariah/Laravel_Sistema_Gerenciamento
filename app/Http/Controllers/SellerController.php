@@ -12,7 +12,7 @@ class SellerController extends Controller
 {
     public function index(): Response
     {
-        $sellers = Seller::orderByDesc('id')->paginate(4);
+        $sellers = Seller::orderByDesc('id')->paginate(10);
 
         return Inertia::render('Sellers/SellerIndex', ['sellers' => $sellers]);
     }

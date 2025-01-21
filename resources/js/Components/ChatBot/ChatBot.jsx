@@ -5,7 +5,7 @@ export default function Chatbot() {
     const [messages, setMessages] = useState([]);
     const [input, setInput] = useState("");
     const [isTyping, setIsTyping] = useState(false);
-    const [isMinimized, setIsMinimized] = useState(false);
+    const [isMinimized, setIsMinimized] = useState(true);
     const messagesEndRef = useRef(null);
 
     useEffect(() => {

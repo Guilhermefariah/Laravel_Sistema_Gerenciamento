@@ -60,24 +60,32 @@ export default function SellerIndex({ sellers }) {
                                             {seller.status}
                                         </td>
                                         <td className="px-6 py-2 text-sm text-center text-gray-800 hover:text-blue-600 tracking-wider">
-                                            <Link
-                                                href={route("sellers.show", {
-                                                    id: seller.id,
-                                                })}
-                                            >
-                                                <PrimaryButton className="ms-1" />
-                                            </Link>
-                                            <Link
-                                                href={route("sellers.edit", {
-                                                    id: seller.id,
-                                                })}
-                                            >
-                                                <WarningButton className="ms-1" />
-                                            </Link>
-                                            <ConfirmDelete
-                                                routeName="sellers.destroy"
-                                                id={seller.id}
-                                            />
+                                            <div className="flex justify-center gap-2">
+                                                <Link
+                                                    href={route(
+                                                        "sellers.show",
+                                                        {
+                                                            id: seller.id,
+                                                        }
+                                                    )}
+                                                >
+                                                    <PrimaryButton className="ms-1" />
+                                                </Link>
+                                                <Link
+                                                    href={route(
+                                                        "sellers.edit",
+                                                        {
+                                                            id: seller.id,
+                                                        }
+                                                    )}
+                                                >
+                                                    <WarningButton className="ms-1" />
+                                                </Link>
+                                                <ConfirmDelete
+                                                    routeName="sellers.destroy"
+                                                    id={seller.id}
+                                                />
+                                            </div>
                                         </td>
                                     </tr>
                                 ))}
@@ -90,7 +98,7 @@ export default function SellerIndex({ sellers }) {
                     />
                 </div>
             </div>
-            <Chatbot/>
+            <Chatbot />
         </AuthenticatedLayout>
     );
 }

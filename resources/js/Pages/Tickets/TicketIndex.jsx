@@ -7,6 +7,7 @@ import { ConfirmDelete } from "@/Components/Delete/ConfirmDelete";
 import { Pagination } from "@/Components/Pagination/Pagination";
 import { Head, Link, usePage } from "@inertiajs/react";
 import TableHeadTicket from "@/Components/Table/TableTicket/TableHeadTicket";
+import Chatbot from "@/Components/ChatBot/ChatBot";
 
 export default function TicketIndex({ tickets }) {
     const { flash } = usePage().props;
@@ -56,25 +57,30 @@ export default function TicketIndex({ tickets }) {
                                             {ticket.status}
                                         </td>
                                         <td className="px-6 py-2 text-sm text-center text-gray-800 hover:text-blue-600 tracking-wider">
-                                            <Link
-                                                href={route("tickets.show", {
-                                                    ticket: ticket.id,
-                                                })}
-                                            >
-                                                <PrimaryButton className="ms-1" />
-                                            </Link>
+                                            <div className="flex justify-center gap-2">
+                                                <Link
+                                                    href={route(
+                                                        "tickets.show",
+                                                        { ticket: ticket.id }
+                                                    )}
+                                                >
+                                                    <PrimaryButton className="text-sm" />
+                                                </Link>
 
-                                            <Link
-                                                href={route("tickets.edit", {
-                                                    ticket: ticket.id,
-                                                })}
-                                            >
-                                                <WarningButton className="ms-1" />
-                                            </Link>
-                                            <ConfirmDelete
-                                                id={ticket.id}
-                                                routeName="tickets.destroy"
-                                            />
+                                                <Link
+                                                    href={route(
+                                                        "tickets.edit",
+                                                        { ticket: ticket.id }
+                                                    )}
+                                                >
+                                                    <WarningButton className="text-sm" />
+                                                </Link>
+
+                                                <ConfirmDelete
+                                                    id={ticket.id}
+                                                    routeName="tickets.destroy"
+                                                />
+                                            </div>
                                         </td>
                                     </tr>
                                 ))}
@@ -87,6 +93,7 @@ export default function TicketIndex({ tickets }) {
                     />
                 </div>
             </div>
+            <Chatbot />
         </AuthenticatedLayout>
     );
 }
