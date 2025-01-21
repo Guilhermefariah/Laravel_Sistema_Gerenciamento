@@ -45,4 +45,4 @@ Para contribuir com o projeto, siga os passos abaixo:
 
 ## Licença
 
-Este projeto é licenciado sob a licença MIT.
+Este projeto é licenciado sob a licença `MIT`.
