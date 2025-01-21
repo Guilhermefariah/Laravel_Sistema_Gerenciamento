@@ -25,8 +25,8 @@ class SellerRequest extends FormRequest
             'name' => 'required',
             'email' => 'required|email',
             'phone' => 'required',
-            'amount_tickets' => 'required',
-            'status' => 'required',
+            'amount_tickets' => 'string',
+            'status' => 'string',
         ];
     }    
 }

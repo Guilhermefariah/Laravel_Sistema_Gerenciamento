@@ -25,7 +25,7 @@ class TicketRequest extends FormRequest
             "subject" => "required",
             "description" => "required",
             "date_creation" => "required",
-            "status" => "required",
+            "status" => "string",
         ];
     }
 }

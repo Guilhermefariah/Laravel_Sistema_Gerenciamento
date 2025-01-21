@@ -89,7 +89,7 @@ class SellerController extends Controller
             'status.required' => 'O status é obrigatório',
             'status.max' => 'O status deve ter menos de 255 caracteres',
         ]);
-
+        
         $seller->update([
             'name' => $request->name,
             'email' => $request->email,
