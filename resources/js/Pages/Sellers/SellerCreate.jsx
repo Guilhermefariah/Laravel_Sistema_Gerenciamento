@@ -8,8 +8,6 @@ export default function SellerCreate() {
         name: "",
         email: "",
         phone: "",
-        amount_tickets: "",
-        status: "",
     });
 
     const handleSubmit = (e) => {
@@ -125,8 +123,8 @@ export default function SellerCreate() {
                                 }
                                 className="mt-1 block w-full rounded-md border-none shadow-sm focus:ring-blue-600 sm:text-sm text-gray-700"
                             >
-                                <option value="Ativo">Ativo</option>
-                                <option value="Inativo">Inativo</option>
+                                <option value="ativo">Ativo</option>
+                                <option value="inativo">Inativo</option>
                             </select>
                             {errors.status && (
                                 <span className="text-red-500 text-sm">
@@ -153,11 +151,11 @@ export default function SellerCreate() {
                                 }
                                 className="mt-1 block w-full rounded-md border-none shadow-sm focus:ring-blue-600 sm:text-sm text-gray-700"
                             >
-                                <option value="Em Aberto"> Em Aberto </option>
-                                <option value="Em Andamento">
+                                <option value="em_aberto"> Em Aberto </option>
+                                <option value="em_andamento">
                                     Em Andamento
                                 </option>
-                                <option value="Resolvido">Resolvido</option>
+                                <option value="resolvido">Resolvido</option>
                             </select>
 
                             {errors.amount_tickets && (

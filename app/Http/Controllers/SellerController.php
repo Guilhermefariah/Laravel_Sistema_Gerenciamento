@@ -34,8 +34,6 @@ class SellerController extends Controller
             'name' => 'required|string|max:255',
             'email' => 'required|string|email|max:255|unique:Sellers',
             'phone' => 'required|string|max:255',
-            'amount_tickets' => 'required|string|max:255',
-            'status' => 'required|string|max:255',
         ], [
             'name.required' => 'O nome é obrigatório',
             'name.max' => 'O nome deve ter menos de 255 caracteres',
@@ -45,18 +43,12 @@ class SellerController extends Controller
             'email.unique' => 'O email já está em uso',
             'phone.required' => 'O telefone é obrigatório',
             'phone.max' => 'O telefone deve ter menos de 255 caracteres',
-            'amount_tickets.required' => 'O número de tickets é obrigatório',
-            'amount_tickets.max' => 'O número de tickets deve ter menos de 255 caracteres',
-            'status.required' => 'O status é obrigatório',
-            'status.max' => 'O status deve ter menos de 255 caracteres',
         ]);
 
         $seller = Seller::create([
             'name' => $request->name,
             'email' => $request->email,
             'phone' => $request->phone,
-            'amount_tickets' => $request->amount_tickets,
-            'status' => $request->status
         ]);
 
         return Redirect::route('sellers.show', ['seller' => $seller->id])->with('success', 'Vendedor cadastrado com sucesso');
@@ -73,8 +65,6 @@ class SellerController extends Controller
             'name' => 'required|string|max:255',
             'email' => "required|string|email|max:255|unique:Sellers,email,{$seller->id}",
             'phone' => 'required|string|max:255',
-            'amount_tickets' => 'required|string|max:255',
-            'status' => 'required|string|max:255',
         ], [
             'name.required' => 'O nome é obrigatório',
             'name.max' => 'O nome deve ter menos de 255 caracteres',
@@ -84,18 +74,12 @@ class SellerController extends Controller
             'email.unique' => 'O email já está em uso',
             'phone.required' => 'O telefone é obrigatório',
             'phone.max' => 'O telefone deve ter menos de 255 caracteres',
-            'amount_tickets.required' => 'O número de tickets é obrigatório',
-            'amount_tickets.max' => 'O número de tickets deve ter menos de 255 caracteres',
-            'status.required' => 'O status é obrigatório',
-            'status.max' => 'O status deve ter menos de 255 caracteres',
         ]);
         
         $seller->update([
             'name' => $request->name,
             'email' => $request->email,
             'phone' => $request->phone,
-            'amount_tickets' => $request->amount_tickets,
-            'status' => $request->status
         ]);
 
         return Redirect::route('sellers.show', ['seller' => $seller->id])->with('success', 'Vendedor atualizado com sucesso');

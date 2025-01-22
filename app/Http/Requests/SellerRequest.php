@@ -22,11 +22,9 @@ class SellerRequest extends FormRequest
     public function rules(): array
     {
         return [
-            'name' => 'required',
-            'email' => 'required|email',
-            'phone' => 'required',
-            'amount_tickets' => 'string',
-            'status' => 'string',
+            'name' => ['required', 'string', 'max:255'],
+            'email' => ['required', 'string', 'email', 'max:255', 'unique:Sellers'],
+            'phone' => ['required', 'string', 'max:255'],
         ];
     }    
 }
