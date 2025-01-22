@@ -125,6 +125,9 @@ export default function SellerCreate() {
                                 }
                                 className="mt-1 block w-full rounded-md border-none shadow-sm focus:ring-blue-600 sm:text-sm text-gray-700"
                             >
+                                <option value="" disabled selected>
+                                    Selecione o Status
+                                </option>
                                 <option value="Ativo">Ativo</option>
                                 <option value="Inativo">Inativo</option>
                             </select>
@@ -153,6 +156,9 @@ export default function SellerCreate() {
                                 }
                                 className="mt-1 block w-full rounded-md border-none shadow-sm focus:ring-blue-600 sm:text-sm text-gray-700"
                             >
+                                <option value="" disabled selected>
+                                    Selecione a quantidade de tickets...
+                                </option>
                                 <option value="Em Aberto"> Em Aberto </option>
                                 <option value="Em Andamento">
                                     Em Andamento
