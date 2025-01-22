@@ -31,9 +31,9 @@ class SellerController extends Controller
     public function store(SellerRequest $request)
     {
         $request->validate([
-            'name' => 'required|string|max:255',
-            'email' => 'required|string|email|max:255|unique:Sellers',
-            'phone' => 'required|string|max:255',
+            'name' => 'required',
+            'email' => 'required',
+            'phone' => 'required',
         ], [
             'name.required' => 'O nome é obrigatório',
             'name.max' => 'O nome deve ter menos de 255 caracteres',
@@ -62,9 +62,9 @@ class SellerController extends Controller
     public function update(SellerRequest $request, Seller $seller)
     {
         $request->validate([
-            'name' => 'required|string|max:255',
-            'email' => "required|string|email|max:255|unique:Sellers,email,{$seller->id}",
-            'phone' => 'required|string|max:255',
+            'name' => 'required',
+            'email' => "required",
+            'phone' => 'required',
         ], [
             'name.required' => 'O nome é obrigatório',
             'name.max' => 'O nome deve ter menos de 255 caracteres',
