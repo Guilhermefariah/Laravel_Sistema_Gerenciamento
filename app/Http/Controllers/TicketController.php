@@ -31,10 +31,10 @@ class TicketController extends Controller
     public function store(TicketRequest $request)
     {
         $request->validate([
-            'subject' => 'required|string|max:255',
-            'description' => 'required|string|max:255',
-            'date_creation' => 'required|string|max:255',
-            'status' => 'required|string|max:255',
+            'subject' => 'required',
+            'description' => 'required',
+            'date_creation' => 'required',
+            'status' => 'required',
         ], [
             'subject.required' => 'O assunto é obrigatório',
             'subject.max' => 'O assunto deve ter menos de 255 caracteres',
@@ -42,15 +42,13 @@ class TicketController extends Controller
             'description.max' => 'A descrição deve ter menos de 255 caracteres',
             'date_creation.required' => 'A data de criação é obrigatória',
             'date_creation.max' => 'A data de criação deve ter menos de 255 caracteres',
-            'status.required' => 'O status é obrigatório',
-            'status.max' => 'O status deve ter menos de 255 caracteres',
         ]);
 
         $ticket = Ticket::create([
             'subject' => $request->subject,
             'description' => $request->description,
             'date_creation' => $request->date_creation,
-            'status' => $request->status,
+            'status' => $request->status
         ]);
         
         return Redirect::route('tickets.show', ['ticket' => $ticket->id])->with('success', 'Ticket criado com sucesso');
@@ -67,7 +65,7 @@ class TicketController extends Controller
             'subject' => 'required|string|max:255',
             'description' => 'required|string|max:255',
             'date_creation' => 'required|string|max:255',
-            'status' => 'required|string|max:255',
+            'status' => 'required',
         ], [
             'subject.required' => 'O assunto é obrigatório',
             'subject.max' => 'O assunto deve ter menos de 255 caracteres',
@@ -75,8 +73,6 @@ class TicketController extends Controller
             'description.max' => 'A descrição deve ter menos de 255 caracteres',
             'date_creation.required' => 'A data de criação é obrigatória',
             'date_creation.max' => 'A data de criação deve ter menos de 255 caracteres',
-            'status.required' => 'O status é obrigatório',
-            'status.max' => 'O status deve ter menos de 255 caracteres',
         ]);
 
         $ticket->update([

@@ -1,7 +1,6 @@
 import AuthenticatedLayout from "@/Layouts/AuthenticatedLayout";
 import InfoButton from "@/Components/Button/InfoButton";
 import PrimaryButton from "@/Components/Button/ViewButton";
-import WarningButton from "@/Components/Button/WarningButton";
 import { Head, Link, useForm } from "@inertiajs/react";
 import UpdateButton from "@/Components/Button/UpdateButton";
 
@@ -132,10 +131,10 @@ export default function TicketEdit({ ticket }) {
                                 }
                                 className="mt-1 block w-full rounded-md border-none shadow-sm focus:ring-blue-600 sm:text-sm text-gray-700"
                             >
-                                <option value="Aberto">Aberto</option>
-                                <option value="Em andamento">Fechado</option>
-                                <option value="Atrasado">Atrasado</option>
-                                <option value="Resolvido">Resolvido</option>
+                                <option value="aberto">Aberto</option>
+                                <option value="em_andamento">Em andamento</option>
+                                <option value="atrasado">Atrasado</option>
+                                <option value="resolvido">Resolvido</option>
                             </select>
                             {errors.status && (
                                 <span className="text-red-500">

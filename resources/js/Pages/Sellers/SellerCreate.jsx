@@ -8,6 +8,8 @@ export default function SellerCreate() {
         name: "",
         email: "",
         phone: "",
+        status: "",
+        amount_tickets: "",
     });
 
     const handleSubmit = (e) => {

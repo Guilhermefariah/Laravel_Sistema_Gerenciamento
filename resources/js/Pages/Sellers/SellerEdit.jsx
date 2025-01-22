@@ -10,6 +10,8 @@ export default function SellerEdit({ seller }) {
         name: seller.name || "",
         email: seller.email || "",
         phone: seller.phone || "",
+        status: seller.status || "",
+        amount_tickets: seller.amount_tickets || "",
     });
 
     const handleSubmit = (e) => {

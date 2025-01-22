@@ -34,6 +34,8 @@ class SellerController extends Controller
             'name' => 'required',
             'email' => 'required',
             'phone' => 'required',
+            'status' => 'required',
+            'amount_tickets' => 'required',
         ], [
             'name.required' => 'O nome é obrigatório',
             'name.max' => 'O nome deve ter menos de 255 caracteres',
@@ -49,6 +51,8 @@ class SellerController extends Controller
             'name' => $request->name,
             'email' => $request->email,
             'phone' => $request->phone,
+            'status' => $request->status,
+            'amount_tickets' => $request->amount_tickets
         ]);
 
         return Redirect::route('sellers.show', ['seller' => $seller->id])->with('success', 'Vendedor cadastrado com sucesso');
@@ -65,6 +69,8 @@ class SellerController extends Controller
             'name' => 'required',
             'email' => "required",
             'phone' => 'required',
+            'status' => 'required',
+            'amount_tickets' => 'required',
         ], [
             'name.required' => 'O nome é obrigatório',
             'name.max' => 'O nome deve ter menos de 255 caracteres',
@@ -80,6 +86,8 @@ class SellerController extends Controller
             'name' => $request->name,
             'email' => $request->email,
             'phone' => $request->phone,
+            'status' => $request->status,
+            'amount_tickets' => $request->amount_tickets,
         ]);
 
         return Redirect::route('sellers.show', ['seller' => $seller->id])->with('success', 'Vendedor atualizado com sucesso');
