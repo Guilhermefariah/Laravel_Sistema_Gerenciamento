@@ -131,10 +131,10 @@ export default function TicketEdit({ ticket }) {
                                 }
                                 className="mt-1 block w-full rounded-md border-none shadow-sm focus:ring-blue-600 sm:text-sm text-gray-700"
                             >
-                                <option value="aberto">Aberto</option>
-                                <option value="em_andamento">Em andamento</option>
-                                <option value="atrasado">Atrasado</option>
-                                <option value="resolvido">Resolvido</option>
+                                <option value="Aberto">Aberto</option>
+                                <option value="Em Andamento">Em andamento</option>
+                                <option value="Atrasado">Atrasado</option>
+                                <option value="Resolvido">Resolvido</option>
                             </select>
                             {errors.status && (
                                 <span className="text-red-500">

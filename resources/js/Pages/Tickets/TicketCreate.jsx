@@ -122,9 +122,9 @@ export default function TicketCreate() {
                             >
                                 <option value="" disabled>Selecionar Status</option>
                                 <option value="aberto">Aberto</option>
-                                <option value="em_andamento">Em andamento</option>
-                                <option value="atrasado">Atrasado</option>
-                                <option value="resolvido">Resolvido</option>
+                                <option value="Em Andamento">Em andamento</option>
+                                <option value="Atrasado">Atrasado</option>
+                                <option value="Resolvido">Resolvido</option>
                             </select>
                             {errors.status && (
                                 <span className="text-red-500 text-sm">

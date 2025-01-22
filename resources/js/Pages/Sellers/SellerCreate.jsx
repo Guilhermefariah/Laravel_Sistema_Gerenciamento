@@ -125,8 +125,8 @@ export default function SellerCreate() {
                                 }
                                 className="mt-1 block w-full rounded-md border-none shadow-sm focus:ring-blue-600 sm:text-sm text-gray-700"
                             >
-                                <option value="ativo">Ativo</option>
-                                <option value="inativo">Inativo</option>
+                                <option value="Ativo">Ativo</option>
+                                <option value="Inativo">Inativo</option>
                             </select>
                             {errors.status && (
                                 <span className="text-red-500 text-sm">
@@ -153,11 +153,11 @@ export default function SellerCreate() {
                                 }
                                 className="mt-1 block w-full rounded-md border-none shadow-sm focus:ring-blue-600 sm:text-sm text-gray-700"
                             >
-                                <option value="em_aberto"> Em Aberto </option>
-                                <option value="em_andamento">
+                                <option value="Em Aberto"> Em Aberto </option>
+                                <option value="Em Andamento">
                                     Em Andamento
                                 </option>
-                                <option value="resolvido">Resolvido</option>
+                                <option value="Resolvido">Resolvido</option>
                             </select>
 
                             {errors.amount_tickets && (
