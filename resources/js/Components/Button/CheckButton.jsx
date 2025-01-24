@@ -1,5 +1,3 @@
-import { FaCheck } from "react-icons/fa";
-
 export default function CheckButton({
     className = "",
     disabled,
