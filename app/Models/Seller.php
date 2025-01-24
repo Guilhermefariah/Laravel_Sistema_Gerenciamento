@@ -13,7 +13,5 @@ class Seller extends Model
         'name',
         'email',
         'phone',
-        'amount_tickets',
-        'status',
     ];
 }
